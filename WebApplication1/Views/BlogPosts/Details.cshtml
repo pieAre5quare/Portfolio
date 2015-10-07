@@ -4,71 +4,72 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<section class="content-first">
+    <div class="row details-row">
+        <div class="col-xs-4"></div>
+        <div class="custom-content col-xs-4">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Created)
+                </dt>
 
-<div>
-    <h4>BlogPost</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Created)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Created)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Created)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Updated)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Updated)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Updated)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Updated)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Slug)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Slug)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Slug)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Slug)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Body)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Body)
-        </dt>
+                <dd>
+                    @Html.Raw(Model.Body)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Body)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.MediaURL)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MediaURL)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.MediaURL)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.MediaURL)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Published)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Published)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Published)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Published)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+            </dl>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        </div>
+    </div>
+</section>
