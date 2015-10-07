@@ -1,0 +1,46 @@
+﻿.hidden-xs {
+     display: inline !important; 
+}
+
+.jumbotron {
+    padding:5em 0 !important;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px !important;
+}
+
+.content-first,
+.content-second {
+    margin-right: -25%;
+    margin-left: -25%;
+}
+
+
+#resume-row {
+    margin-left: 100px;
+    height: 50em;
+}
+
+.event {
+    margin: 0 100px 70px 30px;
+    
+}
+
+..event .event-info .date {
+    font-size: 17px;
+}
+
+.resume-img {
+    margin-bottom: 25px;
+}
+
+.about-container {
+    height: 50em;
+}
+
+.modal-dialog {
+     width: 900px;
+}
+
+
+

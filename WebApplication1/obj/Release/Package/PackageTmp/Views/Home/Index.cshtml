@@ -1,0 +1,124 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/SyntaxHighlighter/shCore.css" rel="stylesheet" />
+    <link href="~/Content/SyntaxHighlighter/shThemeDefault.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/animate.css" rel="stylesheet" />
+    <link href="~/Content/creative-brands.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/vertical-carousel.css" rel="stylesheet" />
+    <link href="~/Content/custom.css" rel="stylesheet" />
+    <link href="~/Content/Overwrite.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <img src="~/Content/jonathan.png" class="img-responsive scrollpoint sp-effect3" alt="" />
+        <div class="social-wrapper">
+            <ul class="brands brands-inline hidden-xs scrollpoint sp-effect1">
+                <li><a href="https://www.facebook.com/pieAre5quare"><i class="fa fa-facebook  hi-icon-effect-8"></i></a></li>
+                <li><a href="https://twitter.com/pieAre5quare"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+            <h2 class="scrollpoint sp-effect3">Allan Clark</h2>
+            <ul class="brands brands-inline hidden-xs scrollpoint sp-effect2">
+                <li><a href="https://plus.google.com/u/0/100936607113340504021/posts"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="https://www.linkedin.com/pub/allan-clark/ba/975/7b7"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+        <!-- Slideshow start -->
+        <div id="slideshow" class="carousel slide vertical scrollpoint sp-effect3" data-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Slideshow item 1 active -->
+                <div class="item active"><h3>I <i class="fa fa-heart icon-first"></i> programming</h3></div>
+                <!-- Slideshow item 2 -->
+                <div class="item"><h3>Creative coder <i class="fa fa-code icon"></i></h3></div>
+                <!-- Slideshow item 3 -->
+                <div class="item"><h3><i class="fa fa-trophy"></i> Awesome designer</h3></div>
+            </div>
+        </div>
+        <!-- Slideshow end -->
+        <a href="@Url.Action("Index", "About")" class="btn btn-reference btn-lg scroll scrollpoint sp-effect1" role="button"> About me</a>
+        <a href="@Url.Action("Index", "Portfolio")" class="btn btn-reference btn-lg scroll scrollpoint sp-effect1" role="button"> Portfolio</a>
+        <a href="@Url.Action("Index", "Resume")" class="btn btn-reference btn-lg scroll scrollpoint sp-effect2" role="button"> Resume</a>
+        <a href="@Url.Action("Index", "Contact")" class="btn btn-reference btn-lg scroll scrollpoint sp-effect2" role="button"> Contact me</a>
+
+
+
+
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/SyntaxHighlighter/shCore.js"></script>
+    <script src="~/Scripts/SyntaxHighlighter/shBrushJScript.js"></script>
+    <!-- ==========================
+        JS
+    =========================== -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.magnific-popup.min.js"></script>
+    <script src="~/Scripts/creative-brands.js"></script>
+    <script src="~/Scripts/jquery.easy-pie-chart.js"></script>
+    <script src="~/Scripts/modernizr.custom.js"></script>
+    <script src="~/Scripts/waypoints.min.js"></script>
+    <script src="~/Scripts/jquery.countTo.js"></script>
+    <script src="~/Scripts/jqBootstrapValidation.js"></script>
+    <script src="~/Scripts/custom.js"></script>
+    <script>
+    $(function () {
+		$("input,textarea").jqBootstrapValidation({
+        	preventSubmit: true,
+
+			submitSuccess: function($form, event) {
+				event.preventDefault(); // prevent default submit behaviour
+				// get values from FORM
+				var firstname = $("input#firstname").val();
+				var lastname = $("input#lastname").val();
+				var email = $("input#email").val();
+				var message = $("textarea#message").val();
+
+				$.ajax({
+					url: "send.php",
+					type: "POST",
+					data: {
+						firstname: firstname,
+						lastname: lastname,
+						email: email,
+						message: message
+					},
+					cache: false,
+					success: function() {
+						// Success message
+						$('.contact-alert').html("<div class='alert alert-success'>");
+						$('.contact-alert > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'><i class='fa fa-times'></i></button><strong>Your message has been sent.</strong></div>");
+						//clear all fields
+						$('#contactForm').trigger("reset");
+					},
+					error: function() {
+						// Fail message
+						$('.contact-alert').html("<div class='alert alert-danger'>");
+						$('.contact-alert > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'><i class='fa fa-times'></i></button><strong>Sorry, it seems that my mail server is not responding. Please try again later!</strong></div>");
+						//clear all fields
+						$('#contactForm').trigger("reset");
+					},
+				})
+			}
+		});
+	});
+    </script>
+</body>
+</html>

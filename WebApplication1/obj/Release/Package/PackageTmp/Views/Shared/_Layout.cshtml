@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/SyntaxHighlighter/shCore.css" rel="stylesheet" />
+    <link href="~/Content/SyntaxHighlighter/shThemeDefault.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+
+    
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/animate.css" rel="stylesheet" />
+    <link href="~/Content/creative-brands.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/vertical-carousel.css" rel="stylesheet" />
+    <link href="~/Content/custom.css" rel="stylesheet" />
+    <link href="~/Content/Overwrite.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- ==========================
+        HEADER - START
+    =========================== -->
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavigation"><i class="fa fa-bars"></i></button>
+                    <img src="~/Content/jonathan.png" class="navbar-logo pull-left" alt="" />
+                    <a href="@Url.Action("Index", "Home")" class="navbar-brand animated flipInX">Allan Clark</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="myNavigation">
+
+                    <ul class="nav navbar-nav navbar-right animated flipInX">
+                        <li><a href="@Url.Action("Index", "About")" class="scroll">About me</a></li>
+                        <li><a href="@Url.Action("Index", "Portfolio")" class="scroll">Portfolio</a></li>
+                        <li><a href="@Url.Action("Index", "Resume")" class="scroll">Resume</a></li>
+                        <li><a href="@Url.Action("Index", "Contact")" class="scroll">Contact</a></li>
+                      <!--  <li><a href="blog.html" class="scroll blog_menu_link">Blog</a></li> --->
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container -->
+        </nav>
+    </header>
+    <!-- ==========================
+        HEADER - END
+    =========================== -->
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <!-- ==========================
+        FOOTER - START
+    =========================== -->
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 scrollpoint sp-effect3">
+
+                    <ul class="brands brands-inline">
+                        <li><a href="https://www.facebook.com/pieAre5quare"><i class="fa fa-facebook  hi-icon-effect-8"></i></a></li>
+                        <li><a href="https://twitter.com/pieAre5quare"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://plus.google.com/u/0/100936607113340504021/posts"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="https://www.linkedin.com/pub/allan-clark/ba/975/7b7"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+
+                    <p>© Allan Clark 2015 All right reserved. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==========================
+        FOOTER - END
+    =========================== -->
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/SyntaxHighlighter/shCore.js"></script>
+    <script src="~/Scripts/SyntaxHighlighter/shBrushJScript.js"></script>
+    @RenderSection("scripts", required: false)
+    <!-- ==========================
+        JS
+    =========================== -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.magnific-popup.min.js"></script>
+    <script src="~/Scripts/creative-brands.js"></script>
+    <script src="~/Scripts/jquery.easy-pie-chart.js"></script>
+    <script src="~/Scripts/modernizr.custom.js"></script>
+    <script src="~/Scripts/waypoints.min.js"></script>
+    <script src="~/Scripts/jquery.countTo.js"></script>
+    <script src="~/Scripts/jqBootstrapValidation.js"></script>
+    <script src="~/Scripts/custom.js"></script>
+    <script>
+    $(function () {
+		$("input,textarea").jqBootstrapValidation({
+        	preventSubmit: true,
+
+			submitSuccess: function($form, event) {
+				event.preventDefault(); // prevent default submit behaviour
+				// get values from FORM
+				var firstname = $("input#firstname").val();
+				var lastname = $("input#lastname").val();
+				var email = $("input#email").val();
+				var message = $("textarea#message").val();
+
+				$.ajax({
+					url: "send.php",
+					type: "POST",
+					data: {
+						firstname: firstname,
+						lastname: lastname,
+						email: email,
+						message: message
+					},
+					cache: false,
+					success: function() {
+						// Success message
+						$('.contact-alert').html("<div class='alert alert-success'>");
+						$('.contact-alert > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'><i class='fa fa-times'></i></button><strong>Your message has been sent.</strong></div>");
+						//clear all fields
+						$('#contactForm').trigger("reset");
+					},
+					error: function() {
+						// Fail message
+						$('.contact-alert').html("<div class='alert alert-danger'>");
+						$('.contact-alert > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'><i class='fa fa-times'></i></button><strong>Sorry, it seems that my mail server is not responding. Please try again later!</strong></div>");
+						//clear all fields
+						$('#contactForm').trigger("reset");
+					},
+				})
+			}
+		});
+	});
+    </script>
+</body>
+</html>
