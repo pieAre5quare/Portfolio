@@ -7,6 +7,7 @@ namespace WebApplication1.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
     using Models;
+    using System.Configuration;
 
     internal sealed class Configuration : DbMigrationsConfiguration<WebApplication1.Models.ApplicationDbContext>
     {
@@ -26,19 +27,19 @@ namespace WebApplication1.Migrations
 
             var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
 
-            if (!context.Users.Any(u => u.Email == "allan.clark00@gmail.com"))
+            if (!context.Users.Any(u => u.Email == ConfigurationManager.AppSettings["AdminUser"]))
             {
                 userManager.Create(new ApplicationUser
                 {
-                    UserName = "allan.clark00@gmail.com",
-                    Email = "allan.clark00@gmail.com",
+                    UserName = ConfigurationManager.AppSettings["AdminUser"],
+                    Email = ConfigurationManager.AppSettings["AdminUser"],
                     FirstName = "Allan",
                     LastName = "Clark",
                     DisplayName = "aclark"
-                }, "Gvegas1!");
+                }, ConfigurationManager.AppSettings["AdminPassword"]);
             }
 
-            var userId = userManager.FindByEmail("allan.clark00@gmail.com").Id;
+            var userId = userManager.FindByEmail(ConfigurationManager.AppSettings["AdminUser"]).Id;
             userManager.AddToRole(userId, "Admin");
 
             if (!context.Roles.Any(r => r.Name == "Moderator"))

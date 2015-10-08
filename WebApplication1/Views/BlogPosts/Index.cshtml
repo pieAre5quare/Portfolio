@@ -22,11 +22,16 @@
                     by <a href="index.php">Allan Clark</a>
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span> Posted on @Html.DisplayFor(modelItem => item.Created)</p>
-                <hr>
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
-                <hr>
-                <p>@Html.Raw(item.Body)</p>
-                @Html.ActionLink("Read More", "Details2", new { slug = item.Slug }, new { @class = "btn btn-primary" });
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>@Html.Raw(item.Body)</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img class="img-responsive" src="http://placehold.it/150x150" alt="">
+                    </div>
+                </div>
+
+                @Html.ActionLink("Read More", "Details", new { slug = item.Slug }, new { @class = "btn btn-primary" });
                 if (User.IsInRole("Admin"))
                 {
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" });
@@ -49,67 +54,30 @@
         <div class="col-md-4">
             <!-- Blog Search Well -->
             <div class="well">
-                <div>@Html.Partial("_LoginPartial")</div>
-                @if (User.IsInRole("Admin"))
-                {
-                <div>@Html.ActionLink("Create New", "Create")</div>
-                }
-                <h4>Blog Search</h4>
-                <div class="input-group">
-                    <input type="text" class="form-control">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
+                @*<div>@Html.Partial("_LoginPartial")</div>*@
+                <div class="row">
+                    <div class="col-md-12">
+                        @if (User.IsInRole("Admin"))
+                        {
+                            @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-primary" })
+                        }
+                            @Html.Partial("_LoginPartial")
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Blog Search</h4>
+                        <div class="input-group">
+                            <input type="text" class="form-control">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.input-group -->
-            </div>
-            <!-- Blog Categories Well -->
-            <div class="well">
-                <h4>Blog Categories</h4>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="#">Category Name</a>
-                            </li>
-                            <li>
-                                <a href="#">Category Name</a>
-                            </li>
-                            <li>
-                                <a href="#">Category Name</a>
-                            </li>
-                            <li>
-                                <a href="#">Category Name</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- /.col-lg-6 -->
-                    <div class="col-lg-6">
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="#">Category Name</a>
-                            </li>
-                            <li>
-                                <a href="#">Category Name</a>
-                            </li>
-                            <li>
-                                <a href="#">Category Name</a>
-                            </li>
-                            <li>
-                                <a href="#">Category Name</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- /.col-lg-6 -->
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- Side Widget Well -->
-            <div class="well">
-                <h4>Side Widget Well</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
             </div>
         </div>
     </div>

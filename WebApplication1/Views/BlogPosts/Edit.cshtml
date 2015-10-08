@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Edit";
 }
-<section class="content-first">
+<div class="content-first">
     
 
         @using (Html.BeginForm())
@@ -50,7 +50,7 @@
 
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
-                                <input type="submit" value="Save" class="btn btn-default" />
+                                <input type="submit" value="Save Changes" class="btn btn-default" />
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
         <div>
             @Html.ActionLink("Back to List", "Index")
         </div>
-</section>
+</div>
 
     @section Scripts {
         <script src="~/Scripts/tinymce/tinymce.min.js"></script>
