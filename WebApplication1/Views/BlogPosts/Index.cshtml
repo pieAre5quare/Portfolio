@@ -25,7 +25,10 @@
                                 <p class="lead">
                                     by <a href="index.php">Allan Clark</a>
                                 </p>
-                                <p><span class="glyphicon glyphicon-time"></span> Posted on @Html.DisplayFor(modelItem => item.Created)</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-time"></span> Posted on @Html.DisplayFor(modelItem => item.Created)
+                                    @if (item.Updated != null) { <p><span class="glyphicon glyphicon-time"></span>Updated on @Html.DisplayFor(modelItem => item.Created)</p>}
+                                </p>
                                 <div class="row">
                                     <div class="col-md-8">
                                         <p>@Html.Raw(item.Body)</p>

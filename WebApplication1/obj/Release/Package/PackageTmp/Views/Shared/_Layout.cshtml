@@ -14,7 +14,6 @@
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Content/animate.css" rel="stylesheet" />
     <link href="~/Content/creative-brands.css" rel="stylesheet" />
-    <link href="~/Content/Site.css" rel="stylesheet" />
     <link href="~/Content/vertical-carousel.css" rel="stylesheet" />
     <link href="~/Content/custom.css" rel="stylesheet" />
     <link href="~/Content/Overwrite.css" rel="stylesheet" />
@@ -41,7 +40,7 @@
                         <li><a href="@Url.Action("Index", "Portfolio")" class="scroll">Portfolio</a></li>
                         <li><a href="@Url.Action("Index", "Resume")" class="scroll">Resume</a></li>
                         <li><a href="@Url.Action("Index", "Contact")" class="scroll">Contact</a></li>
-                      <!--  <li><a href="blog.html" class="scroll blog_menu_link">Blog</a></li> --->
+                        <li><a href="@Url.Action("Index", "BlogPosts")" class="scroll blog_menu_link">Blog</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container -->
@@ -50,10 +49,11 @@
     <!-- ==========================
         HEADER - END
     =========================== -->
-
+    <section>
     <div class="container body-content">
         @RenderBody()
     </div>
+    </section>
 
     <!-- ==========================
         FOOTER - START
@@ -84,12 +84,10 @@
     @Scripts.Render("~/bundles/bootstrap")
     <script src="~/Scripts/SyntaxHighlighter/shCore.js"></script>
     <script src="~/Scripts/SyntaxHighlighter/shBrushJScript.js"></script>
-    @RenderSection("scripts", required: false)
+   
     <!-- ==========================
         JS
     =========================== -->
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/jquery.magnific-popup.min.js"></script>
     <script src="~/Scripts/creative-brands.js"></script>
     <script src="~/Scripts/jquery.easy-pie-chart.js"></script>
@@ -98,7 +96,8 @@
     <script src="~/Scripts/jquery.countTo.js"></script>
     <script src="~/Scripts/jqBootstrapValidation.js"></script>
     <script src="~/Scripts/custom.js"></script>
-    <script>
+    @RenderSection("scripts", required: false)
+     @*<script>
     $(function () {
 		$("input,textarea").jqBootstrapValidation({
         	preventSubmit: true,
@@ -139,6 +138,6 @@
 			}
 		});
 	});
-    </script>
+    </script>*@
 </body>
 </html>

@@ -1,13 +1,18 @@
 ﻿$("#submit-button").click(function () {
-    var max = Math.max(
-            $("#num1").val(),
-            $("#num2").val(),
-            $("#num3").val(),
-            $("#num4").val(),
-            $("#num5").val(),
-            $("#num6").val()
-        );
-    $("#result").val(max);
+    if ($("#num1").val() == '' || $("#num2").val() == '' || $("#num3").val() == '' || $("#num4").val() == ''
+        || $("#num5").val() == '' || $("#num6").val() == '') {
+        alert("Please input 6 numbers");
+    } else {
+        var max = Math.max(
+                $("#num1").val(),
+                $("#num2").val(),
+                $("#num3").val(),
+                $("#num4").val(),
+                $("#num5").val(),
+                $("#num6").val()
+            );
+        $("#result").val(max);
+    }
 });
 
 $("#sum-button").click(function () {
@@ -21,7 +26,11 @@ $("#sum-button").click(function () {
     ];
     var total = 0;
     for (var i = 0; i < nums.length; i++) {
-        total += parseFloat(nums[i]);
+        if (nums[i] == '') {
+            total += 0;
+        } else {
+            total += parseFloat(nums[i]);
+        }
     }
     $("#sum-result").val(total);
 });
@@ -37,7 +46,11 @@ $("#product-button").click(function () {
     ];
     var total = 1;
     for (var i = 0; i < nums.length; i++) {
-        total *= parseFloat(nums[i]);
+        if (nums[i] == '') {
+            total *= 1;
+        } else {
+            total *= parseFloat(nums[i]);
+        }
     }
     $("#sum-result").val(total);
 });

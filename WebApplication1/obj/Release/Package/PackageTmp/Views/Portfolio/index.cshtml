@@ -90,46 +90,51 @@
                 <h1 class="modal-title" id="myModalLabel">Max of Five</h1>
             </div>
             <div class="modal-body">
-                <div class="col-xs-6">
-                    <table class="modal-boxes">
-                        <tr>
-                            <td>Enter 6 numbers:</td>
-                        </tr>
-                        <tr>
-                            <td><div class="text-box"> <input type="number" id="num1"></div></td>
-                            <td><div class="text-box"> <input type="number" id="num2"></div></td>
-                        </tr>
-                        <tr>
-                            <td><div class="text-box"> <input type="number" id="num3"></div></td>
-                            <td><div class="text-box"> <input type="number" id="num4"></div></td>
-                        </tr>
-                        <tr>
-                            <td><div class="text-box"> <input type="number" id="num5"></div></td>
-                            <td><div class="text-box"> <input type="number" id="num6"></div></td>
-                        </tr>
-                        <tr>
-                            <td>Result</td>
-                        </tr>
-                        <tr>
-                            <td><div class="text-box"><input type="text" id="result"></div></td>
-                            <td><div id="submit-button"><button>Submit</button></div></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col-xs-6">
-                    <pre class="brush: js">var max = Math.max(
-        $("#num1").val(),
-        $("#num2").val(),
-        $("#num3").val(),
-        $("#num4").val(),
-        $("#num5").val(),
-        $("#num6").val()
-    );
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <table class="modal-boxes">
+                                    <tr>
+                                        <td>Enter 6 numbers:</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="text-box"> <input type="number" id="num1"></div></td>
+                                        <td><div class="text-box"> <input type="number" id="num2"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="text-box"> <input type="number" id="num3"></div></td>
+                                        <td><div class="text-box"> <input type="number" id="num4"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="text-box"> <input type="number" id="num5"></div></td>
+                                        <td><div class="text-box"> <input type="number" id="num6"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Result</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="text-box"><input type="text" id="result"></div></td>
+                                        <td><div id="submit-button"><button>Submit</button></div></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <pre class="brush: js">
+var max = Math.max(
+    $("#num1").val(),
+    $("#num2").val(),
+    $("#num3").val(),
+    $("#num4").val(),
+    $("#num5").val(),
+    $("#num6").val()
+);
 $("#result").val(max);
                 </pre>
+                    </div>
                 </div>
-            </div>
-            <div class="modal-footer no-margin">
             </div>
         </div>
     </div>
@@ -143,38 +148,39 @@ $("#result").val(max);
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h1 class="modal-title" id="myModalLabel">Max of Five</h1>
             </div>
-            <div class="modal-body">
-                <div class="col-xs-6">
-                    <table class="modal-boxes">
-                        <tr>
-                            <td>Enter 6 numbers:</td>
-                        </tr>
-                        <tr>
-                            <td><div class="text-box"> <input type="number" id="sum1"></div></td>
-                            <td><div class="text-box"> <input type="number" id="sum2"></div></td>
-                        </tr>
-                        <tr>
-                            <td><div class="text-box"> <input type="number" id="sum3"></div></td>
-                            <td><div class="text-box"> <input type="number" id="sum4"></div></td>
-                        </tr>
-                        <tr>
-                            <td><div class="text-box"> <input type="number" id="sum5"></div></td>
-                            <td><div class="text-box"> <input type="number" id="sum6"></div></td>
-                        </tr>
-                        <tr>
-                            <td>Result</td>
-                        </tr>
-                        <tr>
-                            <td><div class="text-box"><input type="text" id="sum-result"></div></td>
-                            <td>
-                                <div id="sum-button"><button>Sum</button></div>
-                                <div id="product-button"><button>Product</button></div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col-xs-6">
-                    <pre class="brush: js">$("#sum-button").click(function () {
+            <div class="row">
+                <div class="modal-body">
+                    <div class="col-xs-6">
+                        <table class="modal-boxes">
+                            <tr>
+                                <td>Enter 6 numbers:</td>
+                            </tr>
+                            <tr>
+                                <td><div class="text-box"> <input type="number" id="sum1"></div></td>
+                                <td><div class="text-box"> <input type="number" id="sum2"></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="text-box"> <input type="number" id="sum3"></div></td>
+                                <td><div class="text-box"> <input type="number" id="sum4"></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="text-box"> <input type="number" id="sum5"></div></td>
+                                <td><div class="text-box"> <input type="number" id="sum6"></div></td>
+                            </tr>
+                            <tr>
+                                <td>Result</td>
+                            </tr>
+                            <tr>
+                                <td><div class="text-box"><input type="text" id="sum-result"></div></td>
+                                <td>
+                                    <div id="sum-button"><button>Sum</button></div>
+                                    <div id="product-button"><button>Product</button></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-xs-6">
+                        <pre class="brush: js">$("#sum-button").click(function () {
     var nums = [
             $("#num1").val(),
             $("#num2").val(),
@@ -189,7 +195,6 @@ $("#result").val(max);
     }
     $("#result").val(total);
 });
-
 $("#product-button").click(function () {
     var nums = [
             $("#num1").val(),
@@ -206,9 +211,8 @@ $("#product-button").click(function () {
     $("#result").val(total);
 });
                 </pre>
+                    </div>
                 </div>
-            </div>
-            <div class="modal-footer no-margin">
             </div>
         </div>
     </div>
@@ -224,15 +228,16 @@ $("#product-button").click(function () {
                 <h1 class="modal-title" id="myModalLabel">Max of Five</h1>
             </div>
             <div class="modal-body">
-                <div class="col-xs-6">
-                    <div id="input">Enter a whole number</div>
-                    <div class="text-box"> <input type="text" id="numToFact"></div>
-                    <div>Result</div>
-                    <div class="text-box"> <input type="text" id="fact-result"></div>
-                    <div id="fact-button"><button>Submit</button></div>
-                </div>
-                <div class="col-xs-6">
-                    <pre class="brush: js">$("#fact-button").click(function () {
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div id="input">Enter a whole number</div>
+                        <div class="text-box"> <input type="text" id="numToFact"></div>
+                        <div>Result</div>
+                        <div class="text-box"> <input type="text" id="fact-result"></div>
+                        <div id="fact-button"><button>Submit</button></div>
+                    </div>
+                    <div class="col-xs-6">
+                        <pre class="brush: js">$("#fact-button").click(function () {
     var numToFact = $("#numToFact").val();
     var total = 1;
     for (var i = numToFact; i > 0; i--) {
@@ -241,9 +246,8 @@ $("#product-button").click(function () {
     $("#fact-result").val(total);
 });
                 </pre>
+                    </div>
                 </div>
-            </div>
-            <div class="modal-footer no-margin">
             </div>
         </div>
     </div>
@@ -257,16 +261,17 @@ $("#product-button").click(function () {
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h1 class="modal-title" id="myModalLabel">Max of Five</h1>
             </div>
-            <div class="modal-body">
-                <div class="col-xs-6">
-                    <div id="input">Enter a String</div>
-                    <div class="text-box"> <input type="text" id="checkPalin"></div>
-                    <div>Result</div>
-                    <div class="text-box"><input type="text" id="palin-result"></div>
-                    <div id="palin-button"><button>Submit</button></div>
-                </div>
-                <div class="col-xs-6">
-                    <pre class="brush: js">$("#palin-button").click(function () {
+            <div class="row">
+                <div class="modal-body">
+                    <div class="col-xs-6">
+                        <div id="input">Enter a String</div>
+                        <div class="text-box"> <input type="text" id="checkPalin"></div>
+                        <div>Result</div>
+                        <div class="text-box"><input type="text" id="palin-result"></div>
+                        <div id="palin-button"><button>Submit</button></div>
+                    </div>
+                    <div class="col-xs-6">
+                        <pre class="brush: js">$("#palin-button").click(function () {
     var stringToCheck = $("#checkPalin").val().toUpperCase();
     var reverse = stringToCheck.split("").reverse().join("");
     var result = stringToCheck === reverse;
@@ -278,9 +283,8 @@ $("#product-button").click(function () {
    
 });
                 </pre>
+                    </div>
                 </div>
-            </div>
-            <div class="modal-footer no-margin">
             </div>
         </div>
     </div>
@@ -295,12 +299,13 @@ $("#product-button").click(function () {
                 <h1 class="modal-title" id="myModalLabel">Max of Five</h1>
             </div>
             <div class="modal-body">
-                <div class="col-xs-6">
-                    <div id="fizz-button"><button>FizzBuzz</button></div>
-                    <pre id="fizzResult" style="overflow:auto; height:135px;"></pre>
-                </div>
-                <div class="col-xs-6">
-                    <pre class="brush: js">$("#fizz-button").click(function () {
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div id="fizz-button"><button>FizzBuzz</button></div>
+                        <pre id="fizzResult" style="overflow:auto; height:135px;"></pre>
+                    </div>
+                    <div class="col-xs-6">
+                        <pre class="brush: js">$("#fizz-button").click(function () {
     var textBox = $("#fizzResult");
     var text = "";
     for (var i = 1; i < 101; i++) {
@@ -317,9 +322,8 @@ $("#product-button").click(function () {
     textBox.text(text);
 });
                 </pre>
+                    </div>
                 </div>
-            </div>
-            <div class="modal-footer no-margin">
             </div>
         </div>
     </div>
