@@ -40,6 +40,23 @@ namespace WebApplication1.Migrations
 
             var userId = userManager.FindByEmail("allan.clark00@gmail.com").Id;
             userManager.AddToRole(userId, "Admin");
+
+            if (!context.Roles.Any(r => r.Name == "Moderator"))
+            {
+                roleManager.Create(new IdentityRole { Name = "Moderator" });
+            }
+
+            if(!context.Users.Any(u => u.Email == "moderator@coderfoundry.com"))
+            {
+                userManager.Create(new ApplicationUser
+                {
+                    UserName = "moderator@coderfoundry.com",
+                    Email = "moderator@coderfoundry.com",
+                    FirstName = "Moderator",
+                    LastName = "Moderator",
+                    DisplayName = "Mod"
+                }, "CoderFoundry");
+            }
         }
     }
 }

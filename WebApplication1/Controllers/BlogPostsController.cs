@@ -15,7 +15,7 @@ namespace WebApplication1.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: BlogPosts
-        public ActionResult Index2()
+        public ActionResult Index()
         {
             return View(db.Posts.ToList());
         }
@@ -147,6 +147,11 @@ namespace WebApplication1.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult Login()
+        {
+            return View();
         }
     }
 }
