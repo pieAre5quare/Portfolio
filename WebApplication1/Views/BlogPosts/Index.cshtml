@@ -3,85 +3,97 @@
     ViewBag.Title = "Index";
 }
 
-    <!-- Page Content -->
-<div class="content-first">
-    <div class="row">
-        <!-- Blog Entries Column -->
-        <div class="col-md-8">
-            <h1 class="page-header">
-                Page Heading
-                <small>Secondary Text</small>
-            </h1>
-            <!-- First Blog Post -->
-            @foreach (var item in Model)
+<!-- Page Content -->
+<section>
+    <div class="container">
+        <div class="content-first">
+            <div class="row">
+                <!-- Blog Entries Column -->
+                <div class="col-md-8">
+                    <h1 class="page-header">
+                        Page Heading
+                        <small>Secondary Text</small>
+                    </h1>
+                    <!-- First Blog Post -->
+                    @foreach (var item in Model)
             {
-                <h2>
-                    <a href="#">@Html.DisplayFor(modelItem => item.Title)</a>
-                </h2>
-                <p class="lead">
-                    by <a href="index.php">Allan Clark</a>
-                </p>
-                <p><span class="glyphicon glyphicon-time"></span> Posted on @Html.DisplayFor(modelItem => item.Created)</p>
-                <div class="row">
-                    <div class="col-md-8">
-                        <p>@Html.Raw(item.Body)</p>
-                    </div>
-                    <div class="col-md-4">
-                        <img class="img-responsive" src="http://placehold.it/150x150" alt="">
-                    </div>
-                </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>
+                                    <a href="#">@Html.DisplayFor(modelItem => item.Title)</a>
+                                </h2>
+                                <p class="lead">
+                                    by <a href="index.php">Allan Clark</a>
+                                </p>
+                                <p><span class="glyphicon glyphicon-time"></span> Posted on @Html.DisplayFor(modelItem => item.Created)</p>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <p>@Html.Raw(item.Body)</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img class="img-responsive" src="http://placehold.it/150x150" alt="">
+                                    </div>
+                                </div>
 
-                @Html.ActionLink("Read More", "Details", new { slug = item.Slug }, new { @class = "btn btn-primary" });
-                if (User.IsInRole("Admin"))
-                {
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" });
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-primary" });
-                }
-                <hr>
-            }
-
-            <!-- Pager -->
-            <ul class="pager">
-                <li class="previous">
-                    <a href="#">&larr; Older</a>
-                </li>
-                <li class="next">
-                    <a href="#">Newer &rarr;</a>
-                </li>
-            </ul>
-        </div>
-        <!-- Blog Sidebar Widgets Column -->
-        <div class="col-md-4">
-            <!-- Blog Search Well -->
-            <div class="well">
-                @*<div>@Html.Partial("_LoginPartial")</div>*@
-                <div class="row">
-                    <div class="col-md-12">
-                        @if (User.IsInRole("Admin"))
-                        {
-                            @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-primary" })
-                        }
-                            @Html.Partial("_LoginPartial")
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <h4>Blog Search</h4>
-                        <div class="input-group">
-                            <input type="text" class="form-control">
-                            <span class="input-group-btn">
-                                <button class="btn btn-primary" type="button">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                            </span>
+                                @Html.ActionLink("Read More", "Details", new { slug = item.Slug }, new { @class = "btn btn-primary" })
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" });
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-primary" });
+                                }
+                                <hr>
+                            </div>
+                        </div>
+                    }
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Pager -->
+                            <ul class="pager">
+                                <li class="previous">
+                                    <a href="#">&larr; Older</a>
+                                </li>
+                                <li class="next">
+                                    <a href="#">Newer &rarr;</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <!-- /.input-group -->
+
+                <!-- Blog Sidebar Widgets Column -->
+                <div class="col-md-4">
+                    <!-- Blog Search Well -->
+                    <div class="well">
+                        @*<div>@Html.Partial("_LoginPartial")</div>*@
+                        <div class="row">
+                            <div class="col-md-12">
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-primary" })
+                                }
+                                @Html.Partial("_LoginPartial")
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>Blog Search</h4>
+                                <div class="input-group">
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="button">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.input-group -->
+                    </div>
+                </div>
             </div>
+
+            <!-- /.row -->
+
         </div>
     </div>
-    <!-- /.row -->
-    <hr>
-   
-</div>
+</section>
