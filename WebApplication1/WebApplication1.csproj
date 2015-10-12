@@ -198,7 +198,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\background.jpg" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\ECU.png" />
     <Content Include="Content\iq.png" />
     <Content Include="Content\A6.png" />
@@ -206,7 +206,7 @@
     <Content Include="Content\telenetwork.png" />
     <Content Include="Content\coder.png" />
     <Content Include="Content\animate.css" />
-    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\oldbootstrap.css" />
     <Content Include="Content\creative-brands.css" />
     <Content Include="Content\custom.css" />
     <Content Include="Content\font-awesome.min.css" />
@@ -524,7 +524,9 @@
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Views\BlogPosts\Index.cshtml" />
     <Content Include="Views\BlogPosts\Details.cshtml" />
-    <Content Include="private.config" />
+    <Content Include="private.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
