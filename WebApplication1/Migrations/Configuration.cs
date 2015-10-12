@@ -26,20 +26,21 @@ namespace WebApplication1.Migrations
             }
 
             var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-
-            if (!context.Users.Any(u => u.Email == ConfigurationManager.AppSettings["AdminUser"]))
+            var AdminUser = ConfigurationManager.AppSettings["AdminUser"];
+            var Passwd = ConfigurationManager.AppSettings["AdminPassword"];
+            if (!context.Users.Any(u => u.Email == AdminUser))
             {
                 userManager.Create(new ApplicationUser
                 {
-                    UserName = ConfigurationManager.AppSettings["AdminUser"],
-                    Email = ConfigurationManager.AppSettings["AdminUser"],
+                    UserName = AdminUser,
+                    Email = AdminUser,
                     FirstName = "Allan",
                     LastName = "Clark",
                     DisplayName = "aclark"
-                }, ConfigurationManager.AppSettings["AdminPassword"]);
+                }, Passwd);
             }
 
-            var userId = userManager.FindByEmail(ConfigurationManager.AppSettings["AdminUser"]).Id;
+            var userId = userManager.FindByEmail(AdminUser).Id;
             userManager.AddToRole(userId, "Admin");
 
             if (!context.Roles.Any(r => r.Name == "Moderator"))
