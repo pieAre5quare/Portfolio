@@ -39,15 +39,29 @@
                     <!-- Comments Form -->
                     <div class="well">
                         <h4>Leave a Comment:</h4>
-                        <form role="form">
+                        @using (Html.BeginForm("AddComment","BlogPosts"))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <input type="hidden" name="PostId" value="@Model.Id" />
+                            <input type="hidden" name="Slug" value="@Model.Slug" />
                             <div class="form-group">
                                 <textarea class="form-control" rows="3"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
+                        }
+                        @*<form role="form">
+                            <div class="form-group">
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>*@
                     </div>
                     <hr>
                     <!-- Posted Comments -->
+
+                    @foreach (var comment in Model.Comments)
+                    {
                     <!-- Comment -->
                     <div class="media">
                         <a class="pull-left" href="#">
@@ -55,12 +69,13 @@
                         </a>
                         <div class="media-body">
                             <h4 class="media-heading">
-                                Start Bootstrap
-                                <small>August 25, 2014 at 9:30 PM</small>
+                                @comment.Author
+                                <small>@comment.Created</small>
                             </h4>
-                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                @comment.Body
                         </div>
                     </div>
+                    }
                     <!-- Comment -->
                     <div class="media">
                         <a class="pull-left" href="#">

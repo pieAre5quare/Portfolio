@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -153,5 +154,20 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
+        [HttpPost]
+            public ActionResult AddComment(Comment newComment, string Slug)
+            {
+                if (ModelState.IsValid)
+                {
+                    newComment.Created = System.DateTimeOffset.Now;
+                    newComment.AuthorId = User.Identity.GetUserId();
+                    db.Comments.Add(newComment);
+                    db.SaveChanges();
+                }
+                return RedirectToAction("Details", "BlogPost", new { Slug = Slug});
+        }
+
     }
+
+    
 }
