@@ -8,6 +8,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication1.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace WebApplication1.Controllers
 {
@@ -16,9 +18,11 @@ namespace WebApplication1.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: BlogPosts
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            return View(db.Posts.ToList());
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+            return View(db.Posts.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
         }
 
         // GET: BlogPosts/Details/5
@@ -154,19 +158,38 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
+
+        [Authorize]
+        [ValidateAntiForgeryToken]
         [HttpPost]
-            public ActionResult AddComment(Comment newComment, string Slug)
+        public ActionResult AddComment(Comment newComment)
+        {
+            var post = db.Posts.Find( newComment.PostID );
+
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
-                {
-                    newComment.Created = System.DateTimeOffset.Now;
-                    newComment.AuthorId = User.Identity.GetUserId();
-                    db.Comments.Add(newComment);
-                    db.SaveChanges();
-                }
-                return RedirectToAction("Details", "BlogPost", new { Slug = Slug});
+                newComment.Created = System.DateTimeOffset.Now;
+                newComment.AuthorId = User.Identity.GetUserId();
+                db.Comments.Add(newComment);
+                db.SaveChanges();
+            }
+            return RedirectToAction("Details", "BlogPosts", new { Slug = post.Slug});       
         }
 
+        [Authorize(Roles = "Admin")]
+        public ActionResult DeleteComment(Comment toBeDeleted)
+        {
+            var post = db.Posts.Find(newComment.PostID);
+
+            if (ModelState.IsValid)
+            {
+                newComment.Created = System.DateTimeOffset.Now;
+                newComment.AuthorId = User.Identity.GetUserId();
+                db.Comments.Add(newComment);
+                db.SaveChanges();
+            }
+            return RedirectToAction("Details", "BlogPosts", new { Slug = post.Slug });
+        }
     }
 
     

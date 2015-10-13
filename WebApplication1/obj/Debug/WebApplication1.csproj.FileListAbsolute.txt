@@ -138,3 +138,7 @@ C:\Users\pieAre5quare\Documents\Visual Studio 2015\Projects\Portfolio\WebApplica
 C:\Users\pieAre5quare\Documents\Visual Studio 2015\Projects\Portfolio\WebApplication1\obj\Debug\WebApplication1.pdb
 C:\Users\pieAre5quare\Documents\Visual Studio 2015\Projects\Portfolio\WebApplication1\bin\SendGrid.SmtpApi.dll
 C:\Users\pieAre5quare\Documents\Visual Studio 2015\Projects\Portfolio\WebApplication1\bin\SendGridMail.dll
+C:\Users\pieAre5quare\Documents\Visual Studio 2015\Projects\Portfolio\WebApplication1\bin\PagedList.dll
+C:\Users\pieAre5quare\Documents\Visual Studio 2015\Projects\Portfolio\WebApplication1\bin\PagedList.Mvc.dll
+C:\Users\pieAre5quare\Documents\Visual Studio 2015\Projects\Portfolio\WebApplication1\bin\PagedList.xml
+C:\Users\pieAre5quare\Documents\Visual Studio 2015\Projects\Portfolio\WebApplication1\bin\PagedList.Mvc.xml

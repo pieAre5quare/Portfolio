@@ -39,14 +39,14 @@
                     <!-- Comments Form -->
                     <div class="well">
                         <h4>Leave a Comment:</h4>
-                        @using (Html.BeginForm("AddComment","BlogPosts"))
+                        @using (Html.BeginForm("AddComment", "BlogPosts"))
                         {
                             @Html.AntiForgeryToken()
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            <input type="hidden" name="PostId" value="@Model.Id" />
+                            <input type="hidden" name="PostID" value="@Model.Id" />
                             <input type="hidden" name="Slug" value="@Model.Slug" />
                             <div class="form-group">
-                                <textarea class="form-control" rows="3"></textarea>
+                                <textarea class="form-control" name="Body" rows="3"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         }
@@ -69,10 +69,16 @@
                         </a>
                         <div class="media-body">
                             <h4 class="media-heading">
-                                @comment.Author
+                                @comment.Author.DisplayName
                                 <small>@comment.Created</small>
                             </h4>
                                 @comment.Body
+                        </div>
+                        <div>
+                            @if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+                            {
+                                @Html.ActionLink("Delete", "DeleteComment", "BlogPost", new { @id = "delete-comment" })
+                            }
                         </div>
                     </div>
                     }
