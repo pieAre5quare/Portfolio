@@ -177,18 +177,15 @@ namespace WebApplication1.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        public ActionResult DeleteComment(Comment toBeDeleted)
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult DeleteComment(int id)
         {
-            var post = db.Posts.Find(newComment.PostID);
+            var comment = db.Comments.Find(id);
 
-            if (ModelState.IsValid)
-            {
-                newComment.Created = System.DateTimeOffset.Now;
-                newComment.AuthorId = User.Identity.GetUserId();
-                db.Comments.Add(newComment);
-                db.SaveChanges();
-            }
-            return RedirectToAction("Details", "BlogPosts", new { Slug = post.Slug });
+            db.Comments.Remove(comment);
+            db.SaveChanges();
+            return RedirectToAction("Details", "BlogPosts", new { Slug = comment.Post.Slug });
         }
     }
 

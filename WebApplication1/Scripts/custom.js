@@ -26,14 +26,6 @@ $(window).scroll(function(){
 
 $(document).ready(function () {
 
-    $('#delete-comment').on('click', function () {
-        if (confirm('Are you sure you want to delete this comment?')) {
-
-        }
-    });
-
-    
-
 	$("a.scroll[href^='#']").on('click', function(e) {
 		e.preventDefault();
 		var hash = this.hash;
