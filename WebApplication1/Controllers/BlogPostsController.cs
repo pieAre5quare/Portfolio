@@ -179,13 +179,14 @@ namespace WebApplication1.Controllers
         [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public ActionResult DeleteComment(int id)
+        public ActionResult DeleteComment(int ID)
         {
-            var comment = db.Comments.Find(id);
+            var toBeDeleted = db.Comments.Find(ID);
+            var Slug = toBeDeleted.Post.Slug;
 
-            db.Comments.Remove(comment);
+            db.Comments.Remove(toBeDeleted);
             db.SaveChanges();
-            return RedirectToAction("Details", "BlogPosts", new { Slug = comment.Post.Slug });
+            return RedirectToAction("Details", "BlogPosts", new { Slug });
         }
     }
 
