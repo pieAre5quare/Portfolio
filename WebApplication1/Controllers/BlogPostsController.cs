@@ -188,6 +188,21 @@ namespace WebApplication1.Controllers
             db.SaveChanges();
             return RedirectToAction("Details", "BlogPosts", new { Slug });
         }
+
+        [Authorize(Roles = "Admin")]
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult EditComment(int ID, string Body)
+        {
+
+            var comment = db.Comments.Find(ID);
+            comment.Body = Body;
+            comment.Updated = System.DateTimeOffset.Now;
+            db.Entry(comment).Property("Body").IsModified = true;
+            db.Entry(comment).Property("Updated").IsModified = true;
+            db.SaveChanges();
+            return RedirectToAction("Details", "BlogPosts", new { Slug = comment.Post.Slug });
+        }
     }
 
     
