@@ -10,6 +10,7 @@ using System.Web.Mvc;
 using WebApplication1.Models;
 using PagedList;
 using PagedList.Mvc;
+using System.IO;
 
 namespace WebApplication1.Controllers
 {
@@ -53,10 +54,25 @@ namespace WebApplication1.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
-        public ActionResult Create([Bind(Include = "Id,Created,Updated,Title,Slug,Body,MediaURL,Published")] BlogPost blogPost)
+        public ActionResult Create([Bind(Include = "Id,Created,Updated,Title,Slug,Body,MediaURL,Published")] BlogPost blogPost, HttpPostedFileBase image)
         {
+            if(image != null && image.ContentLength > 0)
+            {
+                var ext = Path.GetExtension(image.FileName).ToLower();
+                if(ext !=".png" && ext != ".jpg" && ext != ".jpeg" && ext != ".gif" && ext !=".bmp")
+                {
+                    ModelState.AddModelError("image", "Invalid Format");
+                }
+            }
             if (ModelState.IsValid)
             {
+                if (image != null)
+                {
+                    var filePath = "/Uploads/";
+                    var absPath = Server.MapPath("~" + filePath);
+                    blogPost.MediaURL = filePath + image.FileName;
+                    image.SaveAs(Path.Combine(absPath, image.FileName));
+                }
                 var Slug = StringUtilities.URLFriendly(blogPost.Title);
                 if (String.IsNullOrWhiteSpace(Slug))
                 {

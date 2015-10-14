@@ -16,25 +16,36 @@
                     </div>
                 </div>
                 <!-- Blog Post Content Column -->
-                <div class="col-lg-8">
-                    <!-- Blog Post -->
-                    <!-- Title -->
-                    <h2>@Html.DisplayFor(model => model.Title)</h2>
-                    <!-- Author -->
-                    <p class="lead">
-                        by <a href="#">Allan Clark</a>
-                    </p>
-                    <hr>
-                    <!-- Date/Time -->
-                    <p><span class="glyphicon glyphicon-time"></span> Posted on @Html.DisplayFor(model => model.Created)</p>
-                    <hr>
-                    <!-- Preview Image -->
-                    <img class="img-responsive" src="http://placehold.it/900x300" alt="">
-                    <hr>
-                    <!-- Post Content -->
-                    <p class="lead">@Html.Raw(Model.Body)</p>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <!-- Blog Post -->
+                            <!-- Title -->
+                            <h2>@Html.DisplayFor(model => model.Title)</h2>
+                            <!-- Author -->
+                            <p class="lead">
+                                by <a href="#">Allan Clark</a>
+                            </p>
+                            
+                            <!-- Date/Time -->
+                            <p><span class="glyphicon glyphicon-time"></span> Posted on @Html.DisplayFor(model => model.Created)</p>
+                            
+                            <!-- Preview Image -->
 
-                    <hr>
+                            <hr>
+                            <!-- Post Content -->
+                            <p class="lead">@Html.Raw(Model.Body)</p>
+
+                            <hr>
+                        </div>
+                        <div class="col-md-4">
+                            @if (Model.MediaURL != null)
+                            {
+                                <img class="img-responsive" src="@Model.MediaURL" alt="" />
+                            }
+                        </div>
+                    </div>
+
                     <!-- Blog Comments -->
                     <!-- Comments Form -->
                     <div class="well">
@@ -51,38 +62,38 @@
                             <button type="submit" class="btn btn-primary">Submit</button>
                         }
                         @*<form role="form">
-                            <div class="form-group">
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>*@
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>*@
                     </div>
-                    <hr>
+                    
                     <!-- Posted Comments -->
 
                     @foreach (var comment in Model.Comments)
                     {
                     <!-- Comment -->
-                    <div class="media">
-                        <a class="pull-left" href="#">
-                            <img class="media-object" src="http://placehold.it/64x64" alt="">
-                        </a>
-                        <div class="media-body">
-                            <h4 class="media-heading">
-                                @comment.Author.DisplayName
-                                <small>@comment.Created</small>
-                            </h4>
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="http://placehold.it/64x64" alt="">
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">
+                                    @comment.Author.DisplayName
+                                    <small>@comment.Created</small>
+                                </h4>
                                 @comment.Body
+                            </div>
+                            <div>
+                                @if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+                                {
+
+                                    <a href="" data-toggle="modal" data-target="#delete-modal" class="btn btn-primary del" data-comment-id="@comment.ID">Delete</a>
+                                    <a href="" data-toggle="modal" data-target="#edit-modal" class="btn btn-primary edit" data-comment-id="@comment.ID" data-comment-body="@comment.Body">Edit</a>
+                                }
+                            </div>
                         </div>
-                        <div>
-                            @if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
-                            {
-                                
-                                <a href="" data-toggle="modal" data-target="#delete-modal" class="btn btn-primary del" data-comment-id="@comment.ID">Delete</a>
-                                <a href="" data-toggle="modal" data-target="#edit-modal" class="btn btn-primary edit" data-comment-id="@comment.ID" data-comment-body="@comment.Body">Edit</a>
-                            }
-                        </div>
-                    </div>
                     }
                 </div>
                 <!-- Blog Sidebar Widgets Column -->
@@ -122,7 +133,7 @@
                         <div class="col-xs-12">
                             Are you sure you want to delete this comment?
                         </div>
-                        
+
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -157,9 +168,9 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                            <input type="hidden" name="ID" id="edit-id" value="" />
-                            <button type="submit" class="btn btn-primary">Save Changes</button>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                        <input type="hidden" name="ID" id="edit-id" value="" />
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>
             </div>
@@ -179,8 +190,8 @@
             //modal.find('form');
             //alert(commentId);
             $('#delete-id').val(commentId);
-            
-            
+
+
         })
 
         $('#edit-modal').on('show.bs.modal', function (event) {
@@ -190,12 +201,12 @@
             // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
             // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
             var modal = $(this)
-            
+
             $('#edit-text').val(text);
             $('#edit-id').val(commentId);
 
 
         })
     </script>
-    
+
 }

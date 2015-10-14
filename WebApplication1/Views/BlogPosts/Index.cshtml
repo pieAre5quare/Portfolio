@@ -21,11 +21,6 @@
                             @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-primary" })
                         }
                     </div>
-
-                    <div class="col-md-11">
-
-                        @Html.Partial("_LoginPartial")
-                    </div>
                 </div>
                 <!-- Blog Entries Column -->
                 <div class="col-md-8">
@@ -54,7 +49,10 @@
                                         <p>@Html.Raw(item.Body)</p>
                                     </div>
                                     <div class="col-md-4">
-                                        <img class="img-responsive" src="http://placehold.it/150x150" alt="">
+                                        @if (item.MediaURL != null)
+                                        {
+                                            <img class="img-responsive" src="@item.MediaURL" alt="" />
+                                        }
                                     </div>
                                 </div>
 
@@ -92,14 +90,15 @@
                 <!-- Blog Sidebar Widgets Column -->
                 <div class="col-md-4">
                     <!-- Blog Search Well -->
+                    <div class="row">
+                        <div class="col-md-11">
+
+                            @Html.Partial("_LoginPartial")
+                        </div>
+                    </div>
                     <div class="well">
                         
-                        @*<div class="row">
-                            <div class="col-md-12">
-                                
-                                @Html.Partial("_LoginPartial")
-                            </div>
-                        </div>*@
+         
                         <div class="row">
                             <div class="col-md-12">
                                 <h4>Blog Search</h4>
