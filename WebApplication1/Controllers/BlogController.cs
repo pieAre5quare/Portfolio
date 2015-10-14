@@ -7,6 +7,7 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
+    [RequireHttps]
     public class BlogController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();

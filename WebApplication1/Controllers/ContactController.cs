@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace WebApplication1.Controllers
 {
+    [RequireHttps]
     public class ContactController : Controller
     {
         // GET: Contact

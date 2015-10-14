@@ -176,7 +176,7 @@ namespace WebApplication1.Controllers
             return RedirectToAction("Details", "BlogPosts", new { Slug = post.Slug});       
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Moderator")]
         [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult DeleteComment(int ID)
@@ -189,7 +189,7 @@ namespace WebApplication1.Controllers
             return RedirectToAction("Details", "BlogPosts", new { Slug });
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Moderator")]
         [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult EditComment(int ID, string Body)

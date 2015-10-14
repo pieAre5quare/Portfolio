@@ -24,7 +24,7 @@ $(window).scroll(function(){
 });
 */
 
-$(document).ready(function() {	
+$(document).ready(function () {
 
 	$("a.scroll[href^='#']").on('click', function(e) {
 		e.preventDefault();
