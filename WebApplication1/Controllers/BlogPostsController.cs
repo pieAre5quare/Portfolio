@@ -23,7 +23,7 @@ namespace WebApplication1.Controllers
         {
             var query = db.Posts.AsQueryable();
             query = !string.IsNullOrWhiteSpace(SearchString) ? query.Where(p => p.Body.Contains(SearchString)) : query;
-            ViewBag.Query = query;
+            ViewBag.Query = SearchString;
             int pageSize = 3;
             int pageNumber = (page ?? 1);
             return View(query.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));

@@ -45,7 +45,7 @@
                                     @if (item.Updated != null) { <p><span class="glyphicon glyphicon-time"></span>Updated on @Html.DisplayFor(modelItem => item.Updated)</p>}
                                 </p>
                                 <div class="row">
-                                    <div class="col-md-8">
+                                    <div class="col-md-8 wrapper">
                                         <p>@Html.Raw(item.Body)</p>
                                     </div>
                                     <div class="col-md-4">
@@ -125,3 +125,25 @@
         </div>
     </div>
 </section>
+
+@section scripts {
+        <script>
+            $(document).ready(function() {
+                $(".wrapper").dotdotdot({
+                    /*	The text to add as ellipsis. */
+                    ellipsis	: '... ',
+
+                    /*	How to cut off the text/html: 'word'/'letter'/'children' */
+                    wrap		: 'word',
+
+                    /*	Wrap-option fallback to 'letter' for long words */
+                    fallbackToLetter: true,
+
+
+                    /*	Optionally set a max-height, if null, the height will be measured. */
+                    height		: 100
+                    
+                });
+            });
+        </script>
+    }
