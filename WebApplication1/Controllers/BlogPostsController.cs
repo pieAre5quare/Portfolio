@@ -19,11 +19,14 @@ namespace WebApplication1.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: BlogPosts
-        public ActionResult Index(int? page)
+        public ActionResult Index(int? page, string SearchString)
         {
+            var query = db.Posts.AsQueryable();
+            query = !string.IsNullOrWhiteSpace(SearchString) ? query.Where(p => p.Body.Contains(SearchString)) : query;
+            ViewBag.Query = query;
             int pageSize = 3;
             int pageNumber = (page ?? 1);
-            return View(db.Posts.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
+            return View(query.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
         }
 
         // GET: BlogPosts/Details/5
@@ -96,12 +99,21 @@ namespace WebApplication1.Controllers
 
         // GET: BlogPosts/Edit/5
         [Authorize(Roles = "Admin")]
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id, HttpPostedFileBase image)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            if (image != null && image.ContentLength > 0)
+            {
+                var ext = Path.GetExtension(image.FileName).ToLower();
+                if (ext != ".png" && ext != ".jpg" && ext != ".jpeg" && ext != ".gif" && ext != ".bmp")
+                {
+                    ModelState.AddModelError("image", "Invalid Format");
+                }
+            }
+            
             BlogPost blogPost = db.Posts.Find(id);
             if (blogPost == null)
             {
@@ -219,7 +231,7 @@ namespace WebApplication1.Controllers
             db.SaveChanges();
             return RedirectToAction("Details", "BlogPosts", new { Slug = comment.Post.Slug });
         }
+        
     }
 
-    
 }

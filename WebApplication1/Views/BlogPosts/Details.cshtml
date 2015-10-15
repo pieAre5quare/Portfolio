@@ -9,12 +9,7 @@
         <!-- Page Content -->
         <div class="content-first">
             <div class="row">
-                <div class="row">
-                    <div class="col-md-11">
-
-                        @Html.Partial("_LoginPartial")
-                    </div>
-                </div>
+                
                 <!-- Blog Post Content Column -->
                 <div class="col-md-8">
                     <div class="row">
@@ -61,12 +56,6 @@
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         }
-                        @*<form role="form">
-                                <div class="form-group">
-                                    <textarea class="form-control" rows="3"></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </form>*@
                     </div>
                     
                     <!-- Posted Comments -->
@@ -98,6 +87,13 @@
                 </div>
                 <!-- Blog Sidebar Widgets Column -->
                 <div class="col-md-4">
+
+                    <div class="row">
+                        <div class="col-md-11">
+
+                            @Html.Partial("_LoginPartial")
+                        </div>
+                    </div>
                     <!-- Blog Search Well -->
                     <div class="well">
                         <div class="row">
