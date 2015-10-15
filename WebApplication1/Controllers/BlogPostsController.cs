@@ -22,7 +22,10 @@ namespace WebApplication1.Controllers
         public ActionResult Index(int? page, string SearchString)
         {
             var query = db.Posts.AsQueryable();
-            query = !string.IsNullOrWhiteSpace(SearchString) ? query.Where(p => p.Body.Contains(SearchString)) : query;
+            var comments = db.Comments.AsQueryable();
+
+            query = !string.IsNullOrWhiteSpace(SearchString) ? query.Where(p => p.Body.Contains(SearchString) ||
+                p.Title.Contains(SearchString)): query;
             ViewBag.Query = SearchString;
             int pageSize = 3;
             int pageNumber = (page ?? 1);
