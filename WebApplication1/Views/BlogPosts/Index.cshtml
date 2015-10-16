@@ -42,8 +42,9 @@
                                 </p>
                                 <p>
                                     <span class="glyphicon glyphicon-time"></span> Posted on @Html.DisplayFor(modelItem => item.Created)
-                                    @if (item.Updated != null) { <p><span class="glyphicon glyphicon-time"></span>Updated on @Html.DisplayFor(modelItem => item.Updated)</p>}
                                 </p>
+                                    @if (item.Updated != null) { <p><span class="glyphicon glyphicon-time"></span>Updated on @Html.DisplayFor(modelItem => item.Updated)</p>}
+                                
                                 <div class="row">
                                     <div class="col-md-8 wrapper">
                                         <p>@Html.Raw(item.Body)</p>

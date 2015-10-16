@@ -23,9 +23,11 @@ namespace WebApplication1.Controllers
         {
             var query = db.Posts.AsQueryable();
             var comments = db.Comments.AsQueryable();
+            
 
             query = !string.IsNullOrWhiteSpace(SearchString) ? query.Where(p => p.Body.Contains(SearchString) ||
                 p.Title.Contains(SearchString)): query;
+
             ViewBag.Query = SearchString;
             int pageSize = 3;
             int pageNumber = (page ?? 1);

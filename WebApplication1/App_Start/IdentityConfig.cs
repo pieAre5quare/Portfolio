@@ -11,6 +11,10 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using WebApplication1.Models;
+using System.Configuration;
+using System.Net;
+using SendGrid;
+using System.Net.Mail;
 
 namespace WebApplication1
 {
@@ -18,6 +22,18 @@ namespace WebApplication1
     {
         public Task SendAsync(IdentityMessage message)
         {
+            var username = ConfigurationManager.AppSettings["SendGridUserName"];
+            var password = ConfigurationManager.AppSettings["SendGridPassword"];
+            var to = ConfigurationManager.AppSettings["ContactEmail"];
+            var credentials = new NetworkCredential(username, password);
+
+            SendGridMessage myMessage = new SendGridMessage();
+            myMessage.AddTo(to);
+            myMessage.From = new MailAddress(message.Destination, message.Subject);
+            myMessage.Subject = message.Subject;
+            myMessage.Text = message.Body;
+            var transportWeb = new Web(credentials);
+            transportWeb.DeliverAsync(myMessage);
             // Plug in your email service here to send an email.
             return Task.FromResult(0);
         }

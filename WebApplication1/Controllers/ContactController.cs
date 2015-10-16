@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace WebApplication1.Controllers
 {
@@ -13,6 +15,19 @@ namespace WebApplication1.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult SendMessage(string firstname, string lastname, string email, string message)
+        {
+            var name = firstname + " " + lastname;
+            new EmailService().SendAsync(new IdentityMessage()
+            {
+                Destination = email,
+                Subject = name,
+                Body = message
+            });
+
+            return RedirectToAction("Index");
         }
     }
 }
