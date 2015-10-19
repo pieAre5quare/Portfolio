@@ -20,7 +20,7 @@
                     <div class="row scrollpoint sp-effect4">
                         <div class="col-sm-8">
                             <h3 class="hidden-xs">Leave a message</h3>
-
+                            <h5>@TempData["Message"]</h5>
                             
                             @using (Html.BeginForm("SendMessage","Contact"))
                             {
@@ -74,6 +74,25 @@
 
             </div>
         </div>
+    </div>
+
+    <div class="modal fade" id="contact-confirm" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
     </div>
 </section>
 <!-- ==========================

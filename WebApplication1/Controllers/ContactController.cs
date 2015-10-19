@@ -27,6 +27,8 @@ namespace WebApplication1.Controllers
                 Body = message
             });
 
+            TempData["Message"] = "Your contact message has been sent";
+
             return RedirectToAction("Index");
         }
     }

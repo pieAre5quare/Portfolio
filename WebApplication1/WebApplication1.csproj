@@ -211,6 +211,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ContactSent.jpg" />
     <Content Include="Content\ECU.png" />
     <Content Include="Content\github.png" />
     <Content Include="Content\iq.png" />
