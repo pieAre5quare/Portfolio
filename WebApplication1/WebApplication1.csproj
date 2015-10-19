@@ -482,6 +482,9 @@
     <Content Include="Scripts\tinymce\tinymce.min.js" />
     <Content Include="Scripts\waypoints.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Uploads\A5.png" />
+    <Content Include="Uploads\blog.jpg" />
+    <Content Include="Uploads\scots.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -547,7 +550,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

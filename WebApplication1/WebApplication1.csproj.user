@@ -11,6 +11,7 @@
     <NameOfLastUsedPublishProfile>aclark</NameOfLastUsedPublishProfile>
     <WebStackScaffolding_DbContextTypeFullName>WebApplication1.Models.ApplicationDbContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
+    <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

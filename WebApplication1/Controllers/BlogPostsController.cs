@@ -79,6 +79,7 @@ namespace WebApplication1.Controllers
                     var filePath = "/Uploads/";
                     var absPath = Server.MapPath("~" + filePath);
                     blogPost.MediaURL = filePath + image.FileName;
+                    Directory.CreateDirectory(absPath);
                     image.SaveAs(Path.Combine(absPath, image.FileName));
                 }
                 var Slug = StringUtilities.URLFriendly(blogPost.Title);
@@ -104,36 +105,12 @@ namespace WebApplication1.Controllers
 
         // GET: BlogPosts/Edit/5
         [Authorize(Roles = "Admin")]
-        public ActionResult Edit(int? id, HttpPostedFileBase image)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            if (image != null && image.ContentLength > 0)
-            {
-                var ext = Path.GetExtension(image.FileName).ToLower();
-                if (ext != ".png" && ext != ".jpg" && ext != ".jpeg" && ext != ".gif" && ext != ".bmp")
-                {
-                    ModelState.AddModelError("image", "Invalid Format");
-                }
-
-                if(ModelState.IsValid)
-                {
-                    if(image != null)
-                    {
-                        var filePath = "/Uploads/";
-                        var absPath = Server.MapPath("~" + filePath);
-                        BlogPost post =  db.Posts.Find(id);
-                        post.MediaURL = filePath + image.FileName;
-                        image.SaveAs(Path.Combine(absPath, image.FileName));
-                    }
-
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
-                }
-            }
-            
             BlogPost blogPost = db.Posts.Find(id);
             if (blogPost == null)
             {
@@ -148,10 +125,33 @@ namespace WebApplication1.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
-        public ActionResult Edit(BlogPost blogPost)
+        public ActionResult Edit(BlogPost blogPost, HttpPostedFileBase image)
         {
+            
+            if (blogPost == null)
+            {
+                return HttpNotFound();
+            }
+            if (image != null && image.ContentLength > 0)
+            {
+                var ext = Path.GetExtension(image.FileName).ToLower();
+                if (ext != ".png" && ext != ".jpg" && ext != ".jpeg" && ext != ".gif" && ext != ".bmp")
+                {
+                    ModelState.AddModelError("image", "Invalid Format");
+                }
+            }
+
+            
             if (ModelState.IsValid)
             {
+                if(image !=null)
+                {
+                    var filePath = "/Uploads/";
+                    var absPath = Server.MapPath("~" + filePath);
+                    blogPost.MediaURL = filePath + image.FileName;
+                    Directory.CreateDirectory(absPath);
+                    image.SaveAs(Path.Combine(absPath, image.FileName));
+                }
                 blogPost.Updated = System.DateTimeOffset.Now;
                 db.Posts.Attach(blogPost);
                 db.Entry(blogPost).Property("Body").IsModified = true;
