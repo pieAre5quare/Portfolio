@@ -32,7 +32,7 @@
                     @foreach (var item in Model)
             {
                         <div class="row">
-                
+
                             <div class="col-md-12">
                                 <h2>
                                     @Html.DisplayFor(modelItem => item.Title)
@@ -43,8 +43,9 @@
                                 <p>
                                     <span class="glyphicon glyphicon-time"></span> Posted on @Html.DisplayFor(modelItem => item.Created)
                                 </p>
-                                    @if (item.Updated != null) { <p><span class="glyphicon glyphicon-time"></span>Updated on @Html.DisplayFor(modelItem => item.Updated)</p>}
-                                
+                                @if (item.Updated != null)
+                                { <p><span class="glyphicon glyphicon-time"></span>Updated on @Html.DisplayFor(modelItem => item.Updated)</p>}
+
                                 <div class="row">
                                     <div class="col-md-8 wrapper">
                                         <p>@Html.Raw(item.Body)</p>
@@ -65,31 +66,31 @@
                                         @if (User.IsInRole("Admin"))
                                         {
                                             <div>
-                                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" })
-                                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-primary" })
+                                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" })
+                                                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-primary" })
                                             </div>
                                         }
                                     </div>
                                 </div>
 
                             </div>
-                            
-                            
-                                <hr>
-                            </div>
+
+
+                            <hr>
+                        </div>
                     }
                     <div class="row">
                         <div class="col-md-12">
                             <!-- Pager -->
                             <ul class="pager">
                                 @*<li class="previous">
-                                    <a href="#">&larr; Older</a>
-                                </li>*@
+                                        <a href="#">&larr; Older</a>
+                                    </li>*@
                                 <li>
                                     Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
                                 </li>
                                 <li class="next">
-                                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @ViewBag.Query}))
+                                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @ViewBag.Query }))
                                     <!--<a href="#">Newer &rarr;</a> -->
                                 </li>
                             </ul>
@@ -115,14 +116,22 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h4>Blog Search</h4>
-                                <div class="input-group">
-                                    <input type="text" class="form-control">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-primary" type="button">
-                                            <span class="glyphicon glyphicon-search"></span>
-                                        </button>
-                                    </span>
-                                </div>
+
+                                @using (Html.BeginForm("Index", "BlogPosts"))
+                                {
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <input type="text" name="SearchString" class="form-control search-input" value="@ViewBag.Query">
+                                        </div>
+                                        <div class="col-md-1">
+                                            <button class="btn btn-primary search-button" type="submit">
+                                                <span class="glyphicon glyphicon-search"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                }
+
                             </div>
                         </div>
                         <!-- /.input-group -->
@@ -136,23 +145,23 @@
 </section>
 
 @section scripts {
-        <script>
-            $(document).ready(function() {
-                $(".wrapper").dotdotdot({
-                    /*	The text to add as ellipsis. */
-                    ellipsis	: '... ',
+    <script>
+        $(document).ready(function () {
+            $(".wrapper").dotdotdot({
+                /*	The text to add as ellipsis. */
+                ellipsis: '... ',
 
-                    /*	How to cut off the text/html: 'word'/'letter'/'children' */
-                    wrap		: 'word',
+                /*	How to cut off the text/html: 'word'/'letter'/'children' */
+                wrap: 'word',
 
-                    /*	Wrap-option fallback to 'letter' for long words */
-                    fallbackToLetter: true,
+                /*	Wrap-option fallback to 'letter' for long words */
+                fallbackToLetter: true,
 
 
-                    /*	Optionally set a max-height, if null, the height will be measured. */
-                    height		: 100
-                    
-                });
+                /*	Optionally set a max-height, if null, the height will be measured. */
+                height: 100
+
             });
-        </script>
-    }
+        });
+    </script>
+}

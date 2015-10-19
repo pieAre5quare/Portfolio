@@ -102,14 +102,20 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h4>Blog Search</h4>
-                                <div class="input-group">
-                                    <input type="text" class="form-control">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-primary" type="button">
-                                            <span class="glyphicon glyphicon-search"></span>
-                                        </button>
-                                    </span>
-                                </div>
+                                @using (Html.BeginForm("Index", "BlogPosts"))
+                                {
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <input type="text" name="SearchString" class="form-control search-input" value="@ViewBag.Query">
+                                        </div>
+                                        <div class="col-md-1">
+                                            <button class="btn btn-primary search-button" type="submit">
+                                                <span class="glyphicon glyphicon-search"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                }
                             </div>
                         </div>
                         <!-- /.input-group -->

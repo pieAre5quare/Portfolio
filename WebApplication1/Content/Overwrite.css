@@ -46,3 +46,14 @@
     padding-top: 10em;
 }
 
+.search-input {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    padding: 17px 12px;
+}
+
+.search-button {
+    margin-left: -29px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
