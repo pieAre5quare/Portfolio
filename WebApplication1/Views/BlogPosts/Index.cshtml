@@ -35,10 +35,10 @@
                 
                             <div class="col-md-12">
                                 <h2>
-                                    <a href="#">@Html.DisplayFor(modelItem => item.Title)</a>
+                                    @Html.DisplayFor(modelItem => item.Title)
                                 </h2>
                                 <p class="lead">
-                                    by <a href="index.php">Allan Clark</a>
+                                    by <a href="@Url.Action("Index", "Home")" class="blog-links">Allan Clark</a>
                                 </p>
                                 <p>
                                     <span class="glyphicon glyphicon-time"></span> Posted on @Html.DisplayFor(modelItem => item.Created)
@@ -53,6 +53,7 @@
                                         @if (item.MediaURL != null)
                                         {
                                             <img class="img-responsive" src="@item.MediaURL" alt="" />
+                                            <hr />
                                         }
                                     </div>
                                 </div>
@@ -96,46 +97,39 @@
                     </div>
                 </div>
 
-             
+
 
                 <!-- Blog Sidebar Widgets Column -->
                 <div class="col-md-4">
-                    <!-- Blog Search Well -->
-                    <div class="row">
-                        <div class="col-md-11">
+                    <div class="well">
 
-                            @Html.Partial("_LoginPartial")
+                        <div class="row">
+                            <div class="col-md-11">
+
+                                @Html.Partial("_LoginPartial")
+                            </div>
                         </div>
                     </div>
+                    <!-- Blog Search Well -->
                     <div class="well">
-                        
-         
                         <div class="row">
                             <div class="col-md-12">
                                 <h4>Blog Search</h4>
-                                <div class="col-md-12">
-                                    @using (Html.BeginForm("Index", "BlogPosts"))
-                                    {
-                                        <div class="row">
-                                            <div class="col-md-10">
-                                                <input type="text" name="SearchString" class="form-control" value="@ViewBag.Query">
-                                            </div>
-                                            <div class="col-md-1">
-                                                <button class="btn btn-primary" type="submit">
-                                                    <span class="glyphicon glyphicon-search"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    }
+                                <div class="input-group">
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="button">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
                                 </div>
                             </div>
                         </div>
                         <!-- /.input-group -->
                     </div>
                 </div>
-            </div>
 
-            <!-- /.row -->
+            </div><!-- /.row -->
 
         </div>
     </div>

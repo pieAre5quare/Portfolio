@@ -117,6 +117,21 @@ namespace WebApplication1.Controllers
                 {
                     ModelState.AddModelError("image", "Invalid Format");
                 }
+
+                if(ModelState.IsValid)
+                {
+                    if(image != null)
+                    {
+                        var filePath = "/Uploads/";
+                        var absPath = Server.MapPath("~" + filePath);
+                        BlogPost post =  db.Posts.Find(id);
+                        post.MediaURL = filePath + image.FileName;
+                        image.SaveAs(Path.Combine(absPath, image.FileName));
+                    }
+
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
             
             BlogPost blogPost = db.Posts.Find(id);

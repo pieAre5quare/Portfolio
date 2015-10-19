@@ -212,6 +212,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\ECU.png" />
+    <Content Include="Content\github.png" />
     <Content Include="Content\iq.png" />
     <Content Include="Content\A6.png" />
     <Content Include="Content\PagedList.css" />

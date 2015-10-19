@@ -64,9 +64,9 @@
                     {
                     <!-- Comment -->
                         <div class="media">
-                            <a class="pull-left" href="#">
+                            <!--<a class="pull-left" href="#">
                                 <img class="media-object" src="http://placehold.it/64x64" alt="">
-                            </a>
+                            </a>-->
                             <div class="media-body">
                                 <h4 class="media-heading">
                                     @comment.Author.DisplayName
@@ -88,10 +88,13 @@
                 <!-- Blog Sidebar Widgets Column -->
                 <div class="col-md-4">
 
-                    <div class="row">
-                        <div class="col-md-11">
+                    <div class="well">
 
-                            @Html.Partial("_LoginPartial")
+                        <div class="row">
+                            <div class="col-md-11">
+
+                                @Html.Partial("_LoginPartial")
+                            </div>
                         </div>
                     </div>
                     <!-- Blog Search Well -->

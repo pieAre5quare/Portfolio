@@ -37,8 +37,9 @@
 }
 
 
-.blog-links {
-    color: #1ABC9C;
+.blog-links:hover {
+    color: #fff;
+    transition-duration: 0.7s;
 }
 
 .details-row {
