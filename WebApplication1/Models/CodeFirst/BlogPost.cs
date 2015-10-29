@@ -15,7 +15,10 @@ namespace WebApplication1.Models
         }
 
         public int Id { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MMM dd yyyy hh:mm tt}")]
         public System.DateTimeOffset Created { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:MMM dd yyyy hh:mm tt}")]
         public System.DateTimeOffset? Updated { get; set; }
         [Required]
         public string Title { get; set; }

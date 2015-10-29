@@ -41,21 +41,23 @@
                                     by <a href="@Url.Action("Index", "Home")" class="blog-links">Allan Clark</a>
                                 </p>
                                 <p>
-                                    <span class="glyphicon glyphicon-time"></span> Posted on @Html.DisplayFor(modelItem => item.Created)
+                                    <span class="glyphicon glyphicon-time"></span> Posted on @Html.DisplayFor(model=>item.Created)
                                 </p>
                                 @if (item.Updated != null)
-                                { <p><span class="glyphicon glyphicon-time"></span>Updated on @Html.DisplayFor(modelItem => item.Updated)</p>}
+                                { <p><span class="glyphicon glyphicon-time"></span>Updated on @Html.DisplayFor(model=> item.Updated) </p>}
 
                                 <div class="row">
-                                    <div class="col-md-8 wrapper">
-                                        <p>@Html.Raw(item.Body)</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        @if (item.MediaURL != null)
-                                        {
-                                            <img class="img-responsive" src="@item.MediaURL" alt="" />
-                                            <hr />
-                                        }
+                                    <div class="col-md-12 ">
+                                        <div>
+                                            @if (item.MediaURL != null)
+                                            {
+                                                <img class="img-responsive" src="@item.MediaURL" alt="" />
+                                                <hr />
+                                            }
+                                        </div>
+                                        <div class="wrapper">
+                                            <p>@Html.Raw(item.Body)</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
