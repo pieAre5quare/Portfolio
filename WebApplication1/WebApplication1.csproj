@@ -211,6 +211,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Allan.jpg" />
+    <Content Include="Content\base.png" />
+    <Content Include="Content\ref3.png" />
+    <Content Include="Content\ref2.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -240,8 +243,6 @@
     <Content Include="Content\macbook.png" />
     <Content Include="Content\Overwrite.css" />
     <Content Include="Content\ref1.png" />
-    <Content Include="Content\ref2.png" />
-    <Content Include="Content\ref3.png" />
     <Content Include="Content\ref4.png" />
     <Content Include="Content\ref5.png" />
     <Content Include="Content\ref6.png" />

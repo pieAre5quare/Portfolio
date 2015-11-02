@@ -6,15 +6,15 @@
     @Html.AntiForgeryToken()
 
     
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { @class = "btn btn-primary" })
-        <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-primary">Log off</a>
+            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { @class = "btn btn-default scroll scrollpoint sp-effect1" })
+        <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-default scroll scrollpoint sp-effect2">Log off</a>
    
     }
 }
 else
 {
     
-        @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { @class ="btn btn-primary" })
-        @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "btn btn-primary" } )
+        @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "btn btn-default scroll scrollpoint sp-effect1" })
+        @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "btn btn-default scroll scrollpoint sp-effect2" } )
    
 }
