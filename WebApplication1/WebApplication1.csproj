@@ -212,6 +212,7 @@
   <ItemGroup>
     <Content Include="Content\Allan.jpg" />
     <Content Include="Content\base.png" />
+    <Content Include="Content\BugTrackerLogo.png" />
     <Content Include="Content\ref3.png" />
     <Content Include="Content\ref2.png" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -560,6 +561,7 @@
     </Content>
     <Content Include="Views\Account\ResendEmailConfirmation.cshtml" />
     <Content Include="Views\Account\ConfirmationSent.cshtml" />
+    <Content Include="Views\Portfolio\BugTrackerLanding.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
