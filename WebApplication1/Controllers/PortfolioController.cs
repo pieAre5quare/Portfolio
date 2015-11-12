@@ -19,5 +19,10 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
+
+        public ActionResult JSexercises()
+        {
+            return View();
+        }
     }
 }

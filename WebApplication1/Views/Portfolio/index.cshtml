@@ -1,55 +1,51 @@
 ﻿
 @{
-    ViewBag.Title = "Portfolio";
+    ViewBag.Title = "Index";
 }
 
-<!-- ==========================
-    Portfolio - START
-=========================== -->
 <section id="reference" class="content-second">
     <h2 class="scrollpoint sp-effect3">JavaScript Exercises</h2>
-    <ul class="grid cs-style-4">
-        <li>
-            <figure class="scrollpoint sp-effect1">
-                <div><img src="~/Content/ref1.png" alt="img04"></div>
-                <figcaption>
-                    <h3>Max of Six</h3>
-                    <a href="" data-toggle="modal" data-target="#max">Show me</a>
-                </figcaption>
-            </figure>
-        </li>
+        <ul class="grid cs-style-4 row">
+            <li class="col-md-6">
+                <figure class="scrollpoint sp-effect1">
+                    <div><img src="~/Content/ref1.png" alt="img04"></div>
+                    <figcaption>
+                        <h3>JavaScript Exercises</h3>
+                        <a href="@Url.Action("JSexercises")">Show me</a>
+                    </figcaption>
+                </figure>
+            </li>
 
-        <li>
-            <figure class="scrollpoint sp-effect3">
-                <div><img src="~/Content/ref2.png" alt="img04"></div>
-                <figcaption>
-                    <h3>Sum and Product by Array</h3>
-                    <a href="" data-toggle="modal" data-target="#sum-product">Show me</a>
-                </figcaption>
-            </figure>
-        </li>
+            <li class="col-md-6">
+                <figure class="scrollpoint sp-effect3">
+                    <div><img src="~/Content/ref2.png" alt="img04"></div>
+                    <figcaption>
+                        <h3>BugTracker</h3>
+                        <a href="@Url.Action("BugTrackerLanding")">Show me</a>
+                    </figcaption>
+                </figure>
+            </li>
 
-        <li>
-            <figure class="scrollpoint sp-effect2">
-                <div><img src="~/Content/ref3.png" alt="img04"></div>
-                <figcaption>
-                    <h3>Factorial</h3>
-                    <a href="" data-toggle="modal" data-target="#factorial">Show me</a>
-                </figcaption>
-            </figure>
-        </li>
+            <li class="col-md-6">
+                <figure class="scrollpoint sp-effect2">
+                    <div><img src="~/Content/ref3.png" alt="img04"></div>
+                    <figcaption>
+                        <h3>Car Finder</h3>
+                        @*<a href="">Show me</a>*@
+                    </figcaption>
+                </figure>
+            </li>
 
-        <li>
-            <figure class="scrollpoint sp-effect1">
-                <div><img src="~/Content/ref4.png" alt="img04"></div>
-                <figcaption>
-                    <h3>Palindrome</h3>
-                    <a href="" data-toggle="modal" data-target="#palindrome">Show me</a>
-                </figcaption>
-            </figure>
-        </li>
-
-        <li>
+            <li class="col-md-6">
+                <figure class="scrollpoint sp-effect1">
+                    <div><img src="~/Content/ref4.png" alt="img04"></div>
+                    <figcaption>
+                        <h3>Budget</h3>
+                        @*<a href="" data-toggle="modal" data-target="#palindrome">Show me</a>*@
+                    </figcaption>
+                </figure>
+            </li>
+    @*<li>
             <figure class="scrollpoint sp-effect3">
                 <div><img src="~/Content/ref5.png" alt="img04"></div>
                 <figcaption>
@@ -57,287 +53,7 @@
                     <a href="" data-toggle="modal" data-target="#fizzbuzz">Show me</a>
                 </figcaption>
             </figure>
-        </li>
+        </li>*@
 
     </ul>
-    @Html.ActionLink("BugTracker","BugTrackerLanding", "Portfolio")
 </section>
-<!-- ==========================
-    REFERENCE - END
-=========================== -->
-
-<!-- ========================== 
-    Modals - Begin
-=========================== -->
-
-
-<div class="modal fade" id="max" tabindex="-1" role="dialog"
-     aria-labelledby="myModalLabel" aria-hidden="true">
-     <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <strong>Objective:</strong>
-                <em>Create a function that accepts six numbers as arguments and returns the largest one.</em>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h1 class="modal-title" id="myModalLabel">Max of Five</h1>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <table class="modal-boxes">
-                                    <tr>
-                                        <td>Enter 6 numbers:</td>
-                                    </tr>
-                                    <tr>
-                                        <td><div class="text-box"> <input type="number" id="num1"></div></td>
-                                        <td><div class="text-box"> <input type="number" id="num2"></div></td>
-                                    </tr>
-                                    <tr>
-                                        <td><div class="text-box"> <input type="number" id="num3"></div></td>
-                                        <td><div class="text-box"> <input type="number" id="num4"></div></td>
-                                    </tr>
-                                    <tr>
-                                        <td><div class="text-box"> <input type="number" id="num5"></div></td>
-                                        <td><div class="text-box"> <input type="number" id="num6"></div></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Result</td>
-                                    </tr>
-                                    <tr>
-                                        <td><div class="text-box"><input type="text" id="result"></div></td>
-                                        <td><div id="submit-button"><button>Submit</button></div></td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-6">
-                        <pre class="brush: js">
-var max = Math.max(
-    $("#num1").val(),
-    $("#num2").val(),
-    $("#num3").val(),
-    $("#num4").val(),
-    $("#num5").val(),
-    $("#num6").val()
-);
-$("#result").val(max);
-                </pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="sum-product" tabindex="-1" role="dialog"
-     aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <strong>Objective:</strong>
-                <em>Create two functions that accept six numbers, and adds/multiplies them as elements of an array</em>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h1 class="modal-title" id="myModalLabel">Max of Five</h1>
-            </div>
-            <div class="row">
-                <div class="modal-body">
-                    <div class="col-xs-6">
-                        <table class="modal-boxes">
-                            <tr>
-                                <td>Enter 6 numbers:</td>
-                            </tr>
-                            <tr>
-                                <td><div class="text-box"> <input type="number" id="sum1"></div></td>
-                                <td><div class="text-box"> <input type="number" id="sum2"></div></td>
-                            </tr>
-                            <tr>
-                                <td><div class="text-box"> <input type="number" id="sum3"></div></td>
-                                <td><div class="text-box"> <input type="number" id="sum4"></div></td>
-                            </tr>
-                            <tr>
-                                <td><div class="text-box"> <input type="number" id="sum5"></div></td>
-                                <td><div class="text-box"> <input type="number" id="sum6"></div></td>
-                            </tr>
-                            <tr>
-                                <td>Result</td>
-                            </tr>
-                            <tr>
-                                <td><div class="text-box"><input type="text" id="sum-result"></div></td>
-                                <td>
-                                    <div id="sum-button"><button>Sum</button></div>
-                                    <div id="product-button"><button>Product</button></div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="col-xs-6">
-                        <pre class="brush: js">$("#sum-button").click(function () {
-    var nums = [
-            $("#num1").val(),
-            $("#num2").val(),
-            $("#num3").val(),
-            $("#num4").val(),
-            $("#num5").val(),
-            $("#num6").val()
-    ];
-    var total = 0;
-    for (var i = 0; i < nums.length; i++) {
-        total += parseFloat(nums[i]);
-    }
-    $("#result").val(total);
-});
-$("#product-button").click(function () {
-    var nums = [
-            $("#num1").val(),
-            $("#num2").val(),
-            $("#num3").val(),
-            $("#num4").val(),
-            $("#num5").val(),
-            $("#num6").val()
-    ];
-    var total = 1;
-    for (var i = 0; i < nums.length; i++) {
-        total *= parseFloat(nums[i]);
-    }
-    $("#result").val(total);
-});
-                </pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="modal fade" id="factorial" tabindex="-1" role="dialog"
-     aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <strong>Objective:</strong>
-                <em>Create a function that accepts a number and returns the factorial.</em>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h1 class="modal-title" id="myModalLabel">Max of Five</h1>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <div id="input">Enter a whole number</div>
-                        <div class="text-box"> <input type="text" id="numToFact"></div>
-                        <div>Result</div>
-                        <div class="text-box"> <input type="text" id="fact-result"></div>
-                        <div id="fact-button"><button>Submit</button></div>
-                    </div>
-                    <div class="col-xs-6">
-                        <pre class="brush: js">$("#fact-button").click(function () {
-    var numToFact = $("#numToFact").val();
-    var total = 1;
-    for (var i = numToFact; i > 0; i--) {
-        total *= i;
-    }
-    $("#fact-result").val(total);
-});
-                </pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="palindrome" tabindex="-1" role="dialog"
-     aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <strong>Objective:</strong>
-                <em>Create a function that accepts a String and determines if the given String is a Palindrome.</em>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h1 class="modal-title" id="myModalLabel">Max of Five</h1>
-            </div>
-            <div class="row">
-                <div class="modal-body">
-                    <div class="col-xs-6">
-                        <div id="input">Enter a String</div>
-                        <div class="text-box"> <input type="text" id="checkPalin"></div>
-                        <div>Result</div>
-                        <div class="text-box"><input type="text" id="palin-result"></div>
-                        <div id="palin-button"><button>Submit</button></div>
-                    </div>
-                    <div class="col-xs-6">
-                        <pre class="brush: js">$("#palin-button").click(function () {
-    var stringToCheck = $("#checkPalin").val().toUpperCase();
-    var reverse = stringToCheck.split("").reverse().join("");
-    var result = stringToCheck === reverse;
-    if (result) {
-        $("#palin-result").val("This is a palindrome");
-    } else {
-        $("#palin-result").val("This is NOT a palindrome");
-    }
-   
-});
-                </pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="fizzbuzz" tabindex="-1" role="dialog"
-     aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <strong>Objective:</strong>
-                <em>Create a function that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”.
-                </em>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h1 class="modal-title" id="myModalLabel">Max of Five</h1>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <div id="fizz-button"><button>FizzBuzz</button></div>
-                        <pre id="fizzResult" style="overflow:auto; height:135px;"></pre>
-                    </div>
-                    <div class="col-xs-6">
-                        <pre class="brush: js">$("#fizz-button").click(function () {
-    var textBox = $("#fizzResult");
-    var text = "";
-    for (var i = 1; i < 101; i++) {
-        if (i % 5 == 0 && i % 3 == 0) {
-            text += "FizzBuzz\n";
-        } else if (i % 5 == 0) {
-            text += "Buzz\n";
-        } else if (i % 3 == 0) {
-            text += "Fizz\n";
-        } else {
-            text += i + "\n";
-        }
-    }
-    textBox.text(text);
-});
-                </pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- ==========================
-    Modals - End
-=========================== -->
-
-@section scripts{
-    <script type="text/javascript">
-        SyntaxHighlighter.all();
-    </script>
- 
-    <script src="~/Scripts/ModalScripts.js"></script>
-  
-    }
