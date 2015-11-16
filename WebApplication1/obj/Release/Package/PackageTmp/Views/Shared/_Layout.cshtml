@@ -28,7 +28,7 @@
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavigation"><i class="fa fa-bars"></i></button>
-                    <img src="~/Content/jonathan.png" class="navbar-logo pull-left" alt="" />
+                    <img src="~/Content/AllanC01.png" class="navbar-logo pull-left" alt="" />
                     <a href="@Url.Action("Index", "Home")" class="navbar-brand animated flipInX">ALLAN CLARK</a>
                 </div>
 
@@ -64,13 +64,13 @@
                 <div class="col-sm-12 scrollpoint sp-effect3">
 
                     <ul class="brands brands-inline">
-                        <li><a href="https://www.facebook.com/pieAre5quare"><i class="fa fa-facebook  hi-icon-effect-8"></i></a></li>
-                        <li><a href="https://twitter.com/pieAre5quare"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="https://github.com/pieAre5quare"><i class="fa fa-github"></i></a></li>
-                        <li><a href="https://www.linkedin.com/pub/allan-clark/ba/975/7b7"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="https://www.facebook.com/pieAre5quare" target="_blank"><i class="fa fa-facebook  hi-icon-effect-8"></i></a></li>
+                        <li><a href="https://twitter.com/pieAre5quare" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://github.com/pieAre5quare" target="_blank"><i class="fa fa-github"></i></a></li>
+                        <li><a href="https://www.linkedin.com/pub/allan-clark/ba/975/7b7" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                     </ul>
 
-                    <p>© Allan Clark 2015 All right reserved. </p>
+                    <p>© Allan Clark 2015 All rights reserved. </p>
                 </div>
             </div>
         </div>
@@ -98,47 +98,6 @@
     <script src="~/Scripts/jqBootstrapValidation.js"></script>
     <script src="~/Scripts/custom.js"></script>
     @RenderSection("scripts", required: false)
-     @*<script>
-    $(function () {
-		$("input,textarea").jqBootstrapValidation({
-        	preventSubmit: true,
-
-			submitSuccess: function($form, event) {
-				event.preventDefault(); // prevent default submit behaviour
-				// get values from FORM
-				var firstname = $("input#firstname").val();
-				var lastname = $("input#lastname").val();
-				var email = $("input#email").val();
-				var message = $("textarea#message").val();
-
-				$.ajax({
-					url: "send.php",
-					type: "POST",
-					data: {
-						firstname: firstname,
-						lastname: lastname,
-						email: email,
-						message: message
-					},
-					cache: false,
-					success: function() {
-						// Success message
-						$('.contact-alert').html("<div class='alert alert-success'>");
-						$('.contact-alert > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'><i class='fa fa-times'></i></button><strong>Your message has been sent.</strong></div>");
-						//clear all fields
-						$('#contactForm').trigger("reset");
-					},
-					error: function() {
-						// Fail message
-						$('.contact-alert').html("<div class='alert alert-danger'>");
-						$('.contact-alert > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'><i class='fa fa-times'></i></button><strong>Sorry, it seems that my mail server is not responding. Please try again later!</strong></div>");
-						//clear all fields
-						$('#contactForm').trigger("reset");
-					},
-				})
-			}
-		});
-	});
-    </script>*@
+    
 </body>
 </html>
