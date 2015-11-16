@@ -7,7 +7,7 @@
       Resume - START
   =========================== -->
 
-<section id="about" class="content-first" >
+<div id="about" class="content-first" >
     <div class="container" >
         <div class="row" id="resume-row">
             <h3 style="margin-left: 70px;">Resume</h3>
@@ -22,10 +22,27 @@
                             <div class="date">2015</div>
                         </div>
                         <div>
-                            <img src="~/Content/coder.png" class="image-bordered img-responsive resume-img" alt="" />
+                            <img src="~/Content/coder.png" class="image-bordered img-responsive resume-img" id="coder" alt="" />
                         </div>
                         <div class="resume-span">
-                            <h3>Master Class</h3>
+                            Master Class
+                        </div>
+                        <div>
+                            <ul>
+                                <li>
+                                    Created personal portfolio website using C#, MVC5, JavaScript, and Bootstrap.
+                                </li>
+                                <li>
+                                    Created fully functional MVC bug tracker web application.  Implemented code first database
+                                    with user- and role-level security. Database interaction done through LINQ to Entity framework. 
+                                </li>
+                                <li>
+                                    Created a fully functional car finder web application. Composed
+                                    dynamic, responsive front-end design using AngularJS, HTML5, and Twitter Bootstrap.
+                                    Accessed NHTSA’s car recalls database using provided WebAPI to show car recalls.
+                                    Included images using Bing’s WebAPI.
+                                </li>
+                            </ul>
                         </div>
                     </div> <!-- BLOG POST 1 - END -->
 
@@ -33,9 +50,23 @@
                         <div class="event-info">
                             <div class="date">2013</div>
                         </div>
+                        <div>
+                            <img src="~/Content/telenetwork.png" class="image-bordered img-responsive resume-img" id ="telenetwork" alt="" />
+                        </div>
                         <div class="resume-span">Tier 2 OneSupport Representative</div>
                         <div>
-                            <img src="~/Content/telenetwork.png" class="image-bordered img-responsive resume-img" alt="" />
+                            <ul>
+                                <li>
+                                    Provide hardware and software support for customer electronics, including setup/maintenance of home networks, virus removals, and tune ups.
+                                </li>
+                                <li>
+                                    Train, mentor, and assist Level 1 agents. Observe new agent calls giving pointers for improvement. 
+                                </li>
+                                <li>
+                                    Assist with Software tool development. Improved existing Call Monitor web application by adding new functionality. Used AJAX and PHP to allow Level 2 
+                                    agents the ability to mark agents they are assisting. This improved workflow and decreased Level 2 assisting overlap.
+                                </li>
+                            </ul>
                         </div>
                     </div> <!-- BLOG POST 1 - END -->
 
@@ -43,9 +74,22 @@
                         <div class="event-info">
                             <div class="date">2012</div>
                         </div>
-                        <div class="resume-span">Technical Support</div>
                         <div>
-                            <img src="~/Content/iq.png" class="image-bordered img-responsive resume-img" alt="" />
+                            <img src="~/Content/iq.png" class="image-bordered img-responsive resume-img" id="iq"alt="" />
+                        </div>
+                        <div class="resume-span">Tier 2 Technical Support</div>
+                        <div>
+                            <ul>
+                                <li>
+                                    Manage Technical Support team. Delegate tier 1 created Jazz tickets to appropriate department. 
+                                </li>
+                                <li>
+                                    Answer customer calls concerning technical issues. Identify issue trends to be forwarded to Engineering.
+                                </li>
+                                <li>
+                                    QA test beta versions of client before patch release.  
+                                </li>
+                            </ul>
                         </div>
                     </div> <!-- BLOG POST 1 - END -->
 
@@ -53,9 +97,25 @@
                         <div class="event-info">
                             <div class="date">2011</div>
                         </div>
+                        <div>
+                            <img src="~/Content/scotland.png" class="image-bordered img-responsive resume-img" id="scotland" alt="" />
+                        </div>
                         <div class="resume-span">Secondary Math Teacher</div>
                         <div>
-                            <img src="~/Content/scotland.png" class="image-bordered img-responsive resume-img" alt="" />
+                            <ul>
+                                <li>
+                                    Taught Integrated Math I, Geometry, Honors Algebra II, and Advanced Functions. 
+                                </li>
+                                <li>
+                                    Implemented Project Based Learning teaching methods. 
+                                </li>
+                                <li>
+                                    Participated and lead department wide common planning meetings to align lessons with Common Core Standards.
+                                </li>
+                                <li>
+                                    Was selected to participate in the American Diploma Project
+                                </li>
+                            </ul>
                         </div>
                     </div> <!-- BLOG POST 1 - END -->
 
@@ -63,9 +123,22 @@
                         <div class="event-info">
                             <div class="date">2010</div>
                         </div>
+                        <div>
+                            <img src="~/Content/ECU.png" class="image-bordered img-responsive resume-img" id="ecu" alt="" />
+                        </div>
                         <div class="resume-span">B.S. Secondary Mathematics Education </div>
                         <div>
-                            <img src="~/Content/ECU.png" class="image-bordered img-responsive resume-img" alt="" />
+                            <ul>
+                                <li>
+                                    Student taught at Kinston High School.
+                                </li>
+                                <li>
+                                    Presented at North Carolina Council of Teachers of Mathematics conference in Raleigh.
+                                </li>
+                                <li>
+                                    Tutored underclassmen in Calculus, Linear Equations, and Modern Algebra.
+                                </li>
+                            </ul>
                         </div>
                     </div> <!-- BLOG POST 1 - END -->
 
@@ -73,13 +146,6 @@
                 </div><!--timeline-->
                 
             </div><!--col 3 end-->
-            @*<div class="col-md-6 col-sm-4 scrollpoint sp-effect2">
-                <center><img src="~/Content/coder.png" class="image-bordered img-responsive resume-img" alt="" /></center>
-                <center><img src="~/Content/telenetwork.png" class="image-bordered img-responsive resume-img" alt="" /></center>
-                <center><img src="~/Content/iq.png" class="image-bordered img-responsive resume-img" alt="" /></center>
-                <center><img src="~/Content/scotland.png" class="image-bordered img-responsive resume-img" alt="" /></center>
-                <center><img src="~/Content/ECU.png" class="image-bordered img-responsive resume-img" alt="" /></center>
-            </div>*@
         </div><!--Row about end-->
     </div>
-</section>
+</div>

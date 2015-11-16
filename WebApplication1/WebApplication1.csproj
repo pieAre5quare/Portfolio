@@ -210,9 +210,13 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\about_pic.png" />
     <Content Include="Content\Allan.jpg" />
+    <Content Include="Content\AllanC01.png" />
     <Content Include="Content\base.png" />
     <Content Include="Content\BugTrackerLogo.png" />
+    <Content Include="Content\headshot.png" />
+    <Content Include="Content\JavaScript_logo.png" />
     <Content Include="Content\ref3.png" />
     <Content Include="Content\ref2.png" />
     <Content Include="Content\bootstrap-theme.css" />

@@ -2,58 +2,52 @@
 @{
     ViewBag.Title = "Index";
 }
+<div class="row">
+    <div class="col-md-12">
+        <section id="reference" class="content-second">
+            <h2 class="scrollpoint sp-effect3">Portfolio</h2>
+            <ul class="grid cs-style-4 row portfolio-items">
+                <li class="col-md-6">
+                    <figure class="scrollpoint sp-effect1">
+                        <div><img src="~/Content/JavaScript_logo.png" alt="img04"></div>
+                        <figcaption>
+                            <h3>JavaScript Exercises</h3>
+                            <a href="@Url.Action("JSexercises")">Show me</a>
+                        </figcaption>
+                    </figure>
+                </li>
 
-<section id="reference" class="content-second">
-    <h2 class="scrollpoint sp-effect3">JavaScript Exercises</h2>
-        <ul class="grid cs-style-4 row">
-            <li class="col-md-6">
-                <figure class="scrollpoint sp-effect1">
-                    <div><img src="~/Content/ref1.png" alt="img04"></div>
-                    <figcaption>
-                        <h3>JavaScript Exercises</h3>
-                        <a href="@Url.Action("JSexercises")">Show me</a>
-                    </figcaption>
-                </figure>
-            </li>
+                <li class="col-md-6">
+                    <figure class="scrollpoint sp-effect3">
+                        <div><img src="~/Content/ref2.png" alt="img04"></div>
+                        <figcaption>
+                            <h3>BugTracker</h3>
+                            <a href="@Url.Action("BugTrackerLanding")">Show me</a>
+                        </figcaption>
+                    </figure>
+                </li>
 
-            <li class="col-md-6">
-                <figure class="scrollpoint sp-effect3">
-                    <div><img src="~/Content/ref2.png" alt="img04"></div>
-                    <figcaption>
-                        <h3>BugTracker</h3>
-                        <a href="@Url.Action("BugTrackerLanding")">Show me</a>
-                    </figcaption>
-                </figure>
-            </li>
+                <li class="col-md-6">
+                    <figure class="scrollpoint sp-effect2">
+                        <div><img src="~/Content/ref3.png" alt="img04"></div>
+                        <figcaption>
+                            <h3>Car Finder</h3>
+                            @*<a href="">Show me</a>*@
+                        </figcaption>
+                    </figure>
+                </li>
 
-            <li class="col-md-6">
-                <figure class="scrollpoint sp-effect2">
-                    <div><img src="~/Content/ref3.png" alt="img04"></div>
-                    <figcaption>
-                        <h3>Car Finder</h3>
-                        @*<a href="">Show me</a>*@
-                    </figcaption>
-                </figure>
-            </li>
+                <li class="col-md-6">
+                    <figure class="scrollpoint sp-effect1">
+                        <div><img src="~/Content/ref4.png" alt="img04"></div>
+                        <figcaption>
+                            <h3>Budget</h3>
+                            @*<a href="" data-toggle="modal" data-target="#palindrome">Show me</a>*@
+                        </figcaption>
+                    </figure>
+                </li>
 
-            <li class="col-md-6">
-                <figure class="scrollpoint sp-effect1">
-                    <div><img src="~/Content/ref4.png" alt="img04"></div>
-                    <figcaption>
-                        <h3>Budget</h3>
-                        @*<a href="" data-toggle="modal" data-target="#palindrome">Show me</a>*@
-                    </figcaption>
-                </figure>
-            </li>
-    @*<li>
-            <figure class="scrollpoint sp-effect3">
-                <div><img src="~/Content/ref5.png" alt="img04"></div>
-                <figcaption>
-                    <h3>FizzBuzz</h3>
-                    <a href="" data-toggle="modal" data-target="#fizzbuzz">Show me</a>
-                </figcaption>
-            </figure>
-        </li>*@
-
-    </ul>
-</section>
+            </ul>
+        </section>
+    </div>
+</div>

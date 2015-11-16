@@ -34,6 +34,8 @@
 
 .resume-img {
     margin-bottom: 25px;
+    height:75px;
+    margin-left: 85px;
 }
 
 
@@ -61,4 +63,36 @@
 .resume-span {
     text-align:center;
     font-size:large;
+}
+
+.portfolio-items{
+    max-width:740px;
+}
+
+.about-text{
+    padding-bottom: 50px;
+}
+
+.about-pic {
+    padding-top: 50px;
+}
+
+#telenetwork {
+    width: 245px;
+}
+
+#iq {
+    width:270px;
+    margin-left:75px;
+}
+
+#scotland {
+    width: 305px;
+    margin-left: 60px;
+}
+
+#ecu {
+    width: 280px;
+    height: initial;
+    margin-left: 50px;
 }
