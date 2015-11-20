@@ -78,7 +78,7 @@
 }
 
 #telenetwork {
-    width: 245px;
+    width: 150px;
 }
 
 #iq {
@@ -95,4 +95,23 @@
     width: 280px;
     height: initial;
     margin-left: 50px;
+}
+
+.before-scroll {
+    display: none;
+}
+
+.after-scroll {
+    display: block;
+}
+
+
+/*TimeLine start */
+.timeline-wrapper {
+    padding-top: 200px;
+}
+
+.cd-timeline-img {
+    padding: 15px;
+    padding-top: 19px;
 }

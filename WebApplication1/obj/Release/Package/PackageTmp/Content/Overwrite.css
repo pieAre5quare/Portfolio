@@ -96,3 +96,11 @@
     height: initial;
     margin-left: 50px;
 }
+
+.before-scroll {
+    display: none;
+}
+
+.after-scroll {
+    display: block;
+}

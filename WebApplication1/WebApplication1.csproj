@@ -211,24 +211,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\about_pic.png" />
-    <Content Include="Content\Allan.jpg" />
     <Content Include="Content\AllanC01.png" />
-    <Content Include="Content\base.png" />
     <Content Include="Content\Bugtracker.png" />
     <Content Include="Content\BugTrackerLogo.png" />
     <Content Include="Content\headshot.png" />
+    <Content Include="Content\iq.png" />
     <Content Include="Content\JavaScript_logo.png" />
+    <Content Include="Content\style.css" />
+    <Content Include="Scripts\jquery.superscrollorama.js" />
     <Content Include="Content\ref3.png" />
     <Content Include="Content\ref2.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\ContactSent.jpg" />
     <Content Include="Content\ECU.png" />
     <Content Include="Content\github.png" />
-    <Content Include="Content\iq.png" />
-    <Content Include="Content\A6.png" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\scotland.png" />
     <Content Include="Content\telenetwork.png" />
@@ -239,21 +237,13 @@
     <Content Include="Content\custom.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\ico1.png" />
-    <Content Include="Content\ico3.png" />
-    <Content Include="Content\ico4.png" />
-    <Content Include="Content\ico5.png" />
     <Content Include="Content\imac.png" />
-    <Content Include="Content\image_01.png" />
-    <Content Include="Content\image_02.png" />
-    <Content Include="Content\jonathan.png" />
     <Content Include="Content\macbook.png" />
     <Content Include="Content\Overwrite.css" />
     <Content Include="Content\ref1.png" />
     <Content Include="Content\ref4.png" />
     <Content Include="Content\ref5.png" />
     <Content Include="Content\ref6.png" />
-    <Content Include="Content\scots.png" />
-    <Content Include="Content\suzanne.png" />
     <Content Include="Content\SyntaxHighlighter\shCore.css" />
     <Content Include="Content\SyntaxHighlighter\shCoreDefault.css" />
     <Content Include="Content\SyntaxHighlighter\shCoreDjango.css" />
@@ -271,8 +261,8 @@
     <Content Include="Content\SyntaxHighlighter\shThemeMDUltra.css" />
     <Content Include="Content\SyntaxHighlighter\shThemeMidnight.css" />
     <Content Include="Content\SyntaxHighlighter\shThemeRDark.css" />
-    <Content Include="Content\tom.png" />
-    <Content Include="Content\vertical-carousel.css" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\TweenLite.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -497,6 +487,7 @@
     <Content Include="Scripts\tinymce\themes\modern\theme.min.js" />
     <Content Include="Scripts\tinymce\tinymce.js" />
     <Content Include="Scripts\tinymce\tinymce.min.js" />
+    <Content Include="Scripts\TweenMax.min.js" />
     <Content Include="Scripts\waypoints.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Uploads\A5.png" />
@@ -541,7 +532,6 @@
     <Content Include="Views\Portfolio\JSexercises.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
-    <Content Include="Views\Resume\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Blog\Create.cshtml" />
     <Content Include="Views\BlogPosts\Create.cshtml" />
@@ -568,6 +558,7 @@
     <Content Include="Views\Account\ConfirmationSent.cshtml" />
     <Content Include="Views\Portfolio\BugTrackerLanding.cshtml" />
     <Content Include="Views\Portfolio\Index.cshtml" />
+    <Content Include="Views\Resume\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
