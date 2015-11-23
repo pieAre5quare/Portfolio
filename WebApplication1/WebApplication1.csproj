@@ -214,6 +214,9 @@
     <Content Include="Content\AllanC01.png" />
     <Content Include="Content\Bugtracker.png" />
     <Content Include="Content\BugTrackerLogo.png" />
+    <Content Include="Content\car-finder.png" />
+    <Content Include="Content\car-landing.jpg" />
+    <Content Include="Content\cars.png" />
     <Content Include="Content\headshot.png" />
     <Content Include="Content\iq.png" />
     <Content Include="Content\JavaScript_logo.png" />
@@ -559,6 +562,7 @@
     <Content Include="Views\Portfolio\BugTrackerLanding.cshtml" />
     <Content Include="Views\Portfolio\Index.cshtml" />
     <Content Include="Views\Resume\Index.cshtml" />
+    <Content Include="Views\Portfolio\CarFinderLanding.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

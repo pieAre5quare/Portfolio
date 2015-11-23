@@ -24,5 +24,10 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
+
+        public ActionResult CarFinderLanding()
+        {
+            return View();
+        }
     }
 }
