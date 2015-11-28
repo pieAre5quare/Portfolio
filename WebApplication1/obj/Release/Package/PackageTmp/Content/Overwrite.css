@@ -119,3 +119,19 @@
 #car-finder-img {
     margin-top:-10px;
 }
+
+.cd-timeline-img {
+    padding: 17px;
+    padding-top: 26px;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.cd-timeline-img {
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    margin-left: -40px;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+}
