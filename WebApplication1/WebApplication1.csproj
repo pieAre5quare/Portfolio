@@ -212,6 +212,7 @@
   <ItemGroup>
     <Content Include="Content\about_pic.png" />
     <Content Include="Content\AllanC01.png" />
+    <Content Include="Content\budget.png" />
     <Content Include="Content\Bugtracker.png" />
     <Content Include="Content\BugTrackerLogo.png" />
     <Content Include="Content\car-finder.png" />
