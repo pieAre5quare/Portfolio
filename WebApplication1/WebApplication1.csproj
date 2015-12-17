@@ -212,6 +212,7 @@
   <ItemGroup>
     <Content Include="Content\about_pic.png" />
     <Content Include="Content\AllanC01.png" />
+    <Content Include="Content\budget-tracker.PNG" />
     <Content Include="Content\budget.png" />
     <Content Include="Content\Bugtracker.png" />
     <Content Include="Content\BugTrackerLogo.png" />
@@ -222,6 +223,7 @@
     <Content Include="Content\iq.png" />
     <Content Include="Content\JavaScript_logo.png" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\vertical-carousel.css" />
     <Content Include="Scripts\jquery.superscrollorama.js" />
     <Content Include="Content\ref3.png" />
     <Content Include="Content\ref2.png" />
@@ -564,6 +566,7 @@
     <Content Include="Views\Portfolio\Index.cshtml" />
     <Content Include="Views\Resume\Index.cshtml" />
     <Content Include="Views\Portfolio\CarFinderLanding.cshtml" />
+    <Content Include="Views\Portfolio\BudgetTrackerLanding.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

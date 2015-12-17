@@ -117,7 +117,8 @@
 }
 
 #car-finder-img {
-    margin-top:-10px;
+    margin-top:3px;
+    border-radius:10px;
 }
 
 .cd-timeline-img {
@@ -134,4 +135,29 @@
     margin-left: -40px;
     -webkit-transform: translateZ(0);
     -webkit-backface-visibility: hidden;
+}
+
+.tech-container {
+    background: rgba(60,60,60,.6);
+    border-radius: 50px;
+    margin-left: 40px;
+    font-size: 20px;
+}
+.tech {
+    padding:10px;
+}
+
+.budget-container {
+    position:relative;
+}
+
+#budget-title {
+    position: absolute;
+    top: 225px;
+    left: 360px; 
+    color: orange;
+    background: rgba(60,60,60,.6);
+    font-size: -webkit-xxx-large;
+    border-radius: 17px;
+    padding: 39px;
 }
